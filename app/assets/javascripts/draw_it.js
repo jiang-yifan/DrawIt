@@ -4,7 +4,8 @@ window.DrawIt = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    new DrawIt.Routers.Router({$rootEl: $('#content')});
+    Backbone.history.start();
   }
 };
 

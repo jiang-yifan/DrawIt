@@ -12,12 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.sortable
+//= require jquery.ui.dialog
 //= require underscore
 //= require backbone
-//= require bootstrap
-
+//= require draw_it
 //= require serialize_json
+//= require_tree ./utils
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

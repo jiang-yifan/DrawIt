@@ -1,0 +1,19 @@
+.main-container{
+margin: 0px 100px;
+width: 900px;
+}
+
+.drawings-title{
+  float:left;
+  /*font: 32px;*/
+}
+
+.drawings-button{
+  float:right;
+  /*font: bold 32px*/
+}
+
+.drawings-link{
+  padding-left: 20px;
+  color: blue;
+}

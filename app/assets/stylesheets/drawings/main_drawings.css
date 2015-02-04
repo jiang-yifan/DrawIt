@@ -1,6 +1,9 @@
 .main-container{
-margin: 0px 100px;
 width: 900px;
+}
+
+#content{
+  margin-left: 100px;
 }
 
 .drawings-title{
@@ -16,4 +19,9 @@ width: 900px;
 .drawings-link{
   padding-left: 20px;
   color: blue;
+  cursor: pointer;
+}
+
+button{
+  cursor: pointer;
 }

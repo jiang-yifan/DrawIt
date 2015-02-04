@@ -4,35 +4,21 @@ DrawIt.Views.DrawingsMain = Backbone.CompositeView.extend({
   events:{
     "click #new_drawing": "showNewDrawingForm",
     "click #new_porfolio": "navigateNewPorfolio",
-    'click #porfolios': "showPorfolios"
+    "click #porfolios": "showPorfolios",
+    "click #your_drawings": "showDrawings"
   },
 
   initialize: function (options) {
+    this.drawings = options.drawings;
     this.porfolios = options.porfolios;
-    this.listenTo(this.collection, "add", this.addDrawing);
-
-
-  },
-
-  addDrawings: function () {
-    this.removeSubviews();
-    this.collection.each(this.addDrawing.bind(this));
-  },
-
-  addDrawing: function (drawing) {
-    var drawingThumbnailView = new DrawIt.Views.DrawingThumbnail({
-      model: drawing
-    });
-    this.addSubview(".drawings-wrapper", drawingThumbnailView);
+    this.showDrawings();
   },
 
   navigateNewPorfolio: function (event) {
-    event.preventDefault();
     Backbone.history.navigate("#porfolios/new", {trigger: true})
   },
 
   showNewDrawingForm: function (event) {
-    event.preventDefault();
     var newDrawingForm = new DrawIt.Views.NewDrawingForm({
       collection: this.collection
     });
@@ -40,12 +26,22 @@ DrawIt.Views.DrawingsMain = Backbone.CompositeView.extend({
     // $(".new-drawing-container").dialog({modal: true})
   },
 
+  showDrawings: function (event) {
+    this.removeSubviews()
+    var drawingsListView = new DrawIt.Views.DrawingsList({
+      collection: this.drawings
+    });
+    this.addSubview(".images-wrapper", drawingsListView);
+  },
+
   showPorfolios: function (event) {
-    var newPorfolioView = new DrawIt.Views.NewPorfolio({
+    this.removeSubviews();
+    var porfoliosMainView = new DrawIt.Views.PorfoliosMain({
       collection: this.porfolios
     });
     this.porfolios.fetch();
-    
+    this.addSubview(".images-wrapper", porfoliosMainView)
+
   },
 
   render: function () {

@@ -1,11 +1,16 @@
 .drawing-thumbnail-wrapper{
-  width: 200px;
+  width: 210px;
   padding-left: 10px;
   padding-top: 10px;
   float: left;
 }
 
-.drawing-thumbnail-wrapper img{
+.drawing-thumbnail{
   width:100%;
   margin: auto
+}
+
+.blank-drawing{
+  min-width: 200px;
+  min-height: 100px;
 }

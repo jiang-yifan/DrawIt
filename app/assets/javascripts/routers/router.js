@@ -22,7 +22,7 @@ DrawIt.Routers.Router = Backbone.Router.extend({
 
   mainDrawings: function () {
     var mainDrawingsView = new DrawIt.Views.DrawingsMain({
-      collection: this.userDrawings,
+      drawings: this.userDrawings,
       porfolios: this.userPorfolios
     })
     this.userDrawings.fetch();

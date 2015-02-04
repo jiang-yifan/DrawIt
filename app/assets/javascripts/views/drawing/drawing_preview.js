@@ -1,6 +1,6 @@
 DrawIt.Views.DrawingPreview = Backbone.View.extend({
   template:JST["drawing/drawing_preview"],
-  className: "preview-wrapper",
+  className: "drawing-preview-wrapper",
   events:{
     "click": "checkBox"
   },

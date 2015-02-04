@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203231805) do
+ActiveRecord::Schema.define(version: 20150204055039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,11 +29,12 @@ ActiveRecord::Schema.define(version: 20150203231805) do
   add_index "drawings", ["user_id"], name: "index_drawings_on_user_id", using: :btree
 
   create_table "main_porfolios", force: :cascade do |t|
-    t.integer  "user_id",                               null: false
-    t.string   "name",        default: "Main Porfolio", null: false
+    t.integer  "user_id",                                      null: false
+    t.string   "name",               default: "Main Porfolio", null: false
     t.text     "description"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.string   "porfolio_image_url"
   end
 
   add_index "main_porfolios", ["user_id"], name: "index_main_porfolios_on_user_id", using: :btree
@@ -50,12 +51,12 @@ ActiveRecord::Schema.define(version: 20150203231805) do
   add_index "porfolio_drawings", ["porfolio_type", "porfolio_id"], name: "index_porfolio_drawings_on_porfolio_type_and_porfolio_id", using: :btree
 
   create_table "porfolios", force: :cascade do |t|
-    t.integer  "user_id",        null: false
-    t.string   "name",           null: false
+    t.integer  "user_id",            null: false
+    t.string   "name",               null: false
     t.text     "description"
-    t.string   "profolio_image"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "porfolio_image_url"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   add_index "porfolios", ["user_id"], name: "index_porfolios_on_user_id", using: :btree

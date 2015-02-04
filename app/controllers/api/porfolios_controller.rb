@@ -16,7 +16,7 @@ class Api::PorfoliosController < ApplicationController
   private
   def porfolio_params
     params.require(:porfolio).permit(
-      :name, :description,drawing_ids:[]
+      :name, :porfolio_image_url, :description,drawing_ids:[]
     )
   end
 end

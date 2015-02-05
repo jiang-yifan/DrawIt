@@ -6,7 +6,8 @@ DrawIt.Views.ProfileHeader = Backbone.CompositeView.extend({
     "click #new_portfolio": "navigateNewPortfolio",
     "click #portfolios": "navigatePortfolios",
     "click #your_drawings": "navigateDrawings",
-    "click #favorites": "navigateFavorites"
+    "click #favorites": "navigateFavorites",
+    "click #friends": "navigateFriends"
   },
 
   navigateDrawings: function () {
@@ -15,6 +16,10 @@ DrawIt.Views.ProfileHeader = Backbone.CompositeView.extend({
 
   navigateFavorites: function () {
     Backbone.history.navigate("#drawings/favorites", {trigger: true})
+  },
+
+  navigateFriends: function () {
+    Backbone.history.navigate("friends", {trigger: true})
   },
 
   navigateNewPortfolio: function (event) {

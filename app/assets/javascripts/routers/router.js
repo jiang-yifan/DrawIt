@@ -6,6 +6,7 @@ DrawIt.Routers.Router = Backbone.Router.extend({
     "portfolios/new": "newPortfolio",
     "drawings/favorites": "mainFavorites",
     "portfolios/:id": "showPortfolio",
+    "friends": "mainFriends"
   },
 
   initialize: function (options) {
@@ -15,7 +16,7 @@ DrawIt.Routers.Router = Backbone.Router.extend({
     this.userPortfolios = new DrawIt.Collections.Portfolios();
     this.userFavoriteDrawings =
         new DrawIt.Collections.FavoriteDrawings();
-
+    this.userFriends = new DrawIt.Collections.Friends();
     this.createHeader();
 
   },
@@ -35,7 +36,7 @@ DrawIt.Routers.Router = Backbone.Router.extend({
   mainDrawings: function () {
     var drawingsListView = new DrawIt.Views.DrawingsList({
       collection: this.userDrawings
-    })
+    });
     this.userDrawings.fetch();
     this._swapView(drawingsListView);
   },
@@ -43,9 +44,17 @@ DrawIt.Routers.Router = Backbone.Router.extend({
   mainFavorites: function () {
     var favoritesListView = new DrawIt.Views.FavoritesList({
       collection: this.userFavoriteDrawings
-    })
+    });
     this.userFavoriteDrawings.fetch();
     this._swapView(favoritesListView);
+  },
+
+  mainFriends: function () {
+    var friendsListView = new DrawIt.Views.FriendsList({
+      collection: this.userFriends
+    });
+    this.userFriends.fetch();
+    this._swapView(friendsListView);
   },
 
   mainPortfolios: function () {
@@ -68,19 +77,9 @@ DrawIt.Routers.Router = Backbone.Router.extend({
     var newPortfolioView = new DrawIt.Views.NewPortfolio({
       collection: this.userDrawings
     });
-
-    //WHAT?????
     this.userDrawings.fetch();
     this._swapView(newPortfolioView);
   },
-
-  // showPortfolios: function () {
-  //   var portfoliosIndexView = new DrawIt.Views.PortfoliosMain({
-  //     collection: this.userPortfolios
-  //   });
-  //   this.userPortfolios.fetch();
-  //   this._swapView(portfoliosIndexView)
-  // }
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();

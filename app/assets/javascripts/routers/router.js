@@ -3,7 +3,8 @@ DrawIt.Routers.Router = Backbone.Router.extend({
     "":"mainDrawings",
     "drawings": "mainDrawings",
     "portfolios": "mainPortfolios",
-    "portfolios/new": "newPortfolio"
+    "portfolios/new": "newPortfolio",
+    "drawings/favorites": "mainFavorites",
     // "portfolios/:id": "showPortfolio"
   },
 
@@ -50,12 +51,7 @@ DrawIt.Routers.Router = Backbone.Router.extend({
     });
 
     //WHAT?????
-    this.userDrawings.fetch({
-      succes: function () {
-        console.log("fetched succes");
-      }
-    });
-    debugger
+    this.userDrawings.fetch();
     this._swapView(newPortfolioView);
   },
 

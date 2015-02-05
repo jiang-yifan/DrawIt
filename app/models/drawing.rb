@@ -13,6 +13,15 @@ class Drawing < ActiveRecord::Base
     inverse_of: :commentable
   )
 
+  has_many(
+    :hearts,
+    as: :heartable,
+    dependent: :destroy,
+    inverse_of: :heartable
+  )
+
+  has_many :user_favorite_drawings, dependent: :destroy
+
   has_many(:portfolios, through: :portfolio_drawings, source: :portfolio)
 
   belongs_to :user

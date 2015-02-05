@@ -2,7 +2,7 @@ DrawIt.Views.PortfolioThumbnail = Backbone.View.extend({
   template: JST["portfolio/portfolio_thumbnail"],
   className: "portfolio-thumbnail-wrapper",
   events:{
-    'click': "triggerPortfolioShow"
+    'click .portfolio-thumbnail': "triggerPortfolioShow"
   },
 
   initialize: function () {

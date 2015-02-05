@@ -18,5 +18,12 @@ class Portfolio < ActiveRecord::Base
     inverse_of: :commentable
   )
 
+  has_many(
+    :hearts,
+    as: :heartable,
+    dependent: :destroy,
+    inverse_of: :heartable
+  )
+
   has_many :drawings, through: :portfolio_drawings, source: :drawing
 end

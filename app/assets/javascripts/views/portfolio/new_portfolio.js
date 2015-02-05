@@ -8,7 +8,7 @@ DrawIt.Views.NewPortfolio = Backbone.CompositeView.extend({
 
   initialize: function () {
 
-    this.listenTo(this.collection, "add", this.addDrawing);
+    this.listenTo(this.collection, "add", this.addDrawingPreview);
     this.addDrawings();
     this.clicked = false;
   },

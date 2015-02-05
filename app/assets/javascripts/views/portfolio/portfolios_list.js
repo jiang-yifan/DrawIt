@@ -1,8 +1,5 @@
 DrawIt.Views.PortfoliosList = Backbone.CompositeView.extend({
   template: JST["portfolio/portfolios_list"],
-  events:{
-    // "clickedPortfolio .portfolio-thumbnail-wrapper": "showPortfolio"
-  },
 
   initialize: function () {
     this.listenTo(this.collection, "add", this.addPortfolio);
@@ -22,7 +19,7 @@ DrawIt.Views.PortfoliosList = Backbone.CompositeView.extend({
   },
 
   showPortfolio: function (id) {
-    var portfolio = this.collection.getOrFetch(id);
+    var portfolio = this.collection.getOrFetch(id, "Portfolio");
     var portfolioShowView = new DrawIt.Views.PortfolioShow({
       model: portfolio
     })

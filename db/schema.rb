@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204172101) do
+ActiveRecord::Schema.define(version: 20150205184559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 20150204172101) do
   end
 
   add_index "drawings", ["user_id"], name: "index_drawings_on_user_id", using: :btree
+
+  create_table "hearts", force: :cascade do |t|
+    t.integer  "heartable_id",   null: false
+    t.string   "heartable_type", null: false
+    t.integer  "user_id",        null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "hearts", ["heartable_type", "heartable_id"], name: "index_hearts_on_heartable_type_and_heartable_id", using: :btree
+  add_index "hearts", ["user_id"], name: "index_hearts_on_user_id", using: :btree
 
   create_table "main_portfolios", force: :cascade do |t|
     t.integer  "user_id",                                        null: false
@@ -84,6 +95,16 @@ ActiveRecord::Schema.define(version: 20150204172101) do
 
   add_index "sessions", ["token"], name: "index_sessions_on_token", unique: true, using: :btree
   add_index "sessions", ["user_id"], name: "index_sessions_on_user_id", using: :btree
+
+  create_table "user_favorite_drawings", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "drawing_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_favorite_drawings", ["drawing_id"], name: "index_user_favorite_drawings_on_drawing_id", using: :btree
+  add_index "user_favorite_drawings", ["user_id"], name: "index_user_favorite_drawings_on_user_id", using: :btree
 
   create_table "user_tables", force: :cascade do |t|
   end

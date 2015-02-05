@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :drawings
     resources :portfolios
     resources :comments
+    resources :favorite_drawings
   end
 end

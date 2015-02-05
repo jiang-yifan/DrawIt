@@ -3,11 +3,23 @@
   padding-left: 10px;
   padding-top: 10px;
   float: left;
+  /*position:relative;*/
 }
 
 .drawing-thumbnail{
   width:100%;
-  margin: auto
+  position: relative;
+}
+
+.drawing-thumbnail:hover + .drawing-thumbnail-overlay{
+  display: block;
+}
+
+.drawing-thumbnail-overlay{
+  display: none;
+  position: relative;
+  bottom: 5px;
+  left: 15px;
 }
 
 .blank-drawing{

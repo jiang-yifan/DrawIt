@@ -8,6 +8,14 @@ class User < ActiveRecord::Base
   has_many :drawings, dependent: :destroy
   has_many :portfolios, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :hearts, dependent: :destroy
+  has_many :user_favorite_drawings, dependent: :destroy
+
+  has_many(
+    :favorite_drawings,
+    through: :user_favorite_drawings,
+    source: :drawing
+  )
 
   def self.find_by_credentials(identifier, password)
     user = User.where("username = ?", identifier).first

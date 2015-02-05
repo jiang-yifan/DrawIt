@@ -3,4 +3,11 @@ class Comment < ActiveRecord::Base
 
   belongs_to :commentable, polymorphic: true
   belongs_to :user
+
+  has_many(
+    :hearts,
+    as: :heartable,
+    dependent: :destroy,
+    inverse_of: :heartable
+  )
 end

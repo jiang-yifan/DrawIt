@@ -3,6 +3,7 @@ DrawIt.Views.PortfolioShow = Backbone.CompositeView.extend({
   className: "portfolio_show",
 
   initialize: function () {
+    this.listenTo(this.model, "sync", this.render)
     this.addDrawings();
     this.addComments();
   },

@@ -1,22 +1,18 @@
-.main-container{
+.profile-header{
 width: 900px;
 }
 
-#content{
-  margin-left: 100px;
-}
-
-.drawings-title{
+.title{
   float:left;
   /*font: 32px;*/
 }
 
-.drawings-button{
+.header-button{
   float:right;
   /*font: bold 32px*/
 }
 
-.drawings-link{
+.profile-nav-link{
   padding-left: 20px;
   color: blue;
   cursor: pointer;

@@ -1,6 +1,6 @@
 json.extract!(
   portfolio,
-  :id, :portfolio_image_url, :description
+  :id, :portfolio_image_url, :description, :name
 )
 
 if show_comments

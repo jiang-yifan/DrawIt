@@ -20,4 +20,6 @@
    clear: both;
  }
 
- 
+ #content{
+   margin-left: 100px;
+ }

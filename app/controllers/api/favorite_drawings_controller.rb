@@ -4,7 +4,7 @@ class Api::FavoriteDrawingsController < ApplicationController
   end
 
   def create
-    @favorite_drawing = current_user.favorite_drawings.new(
+    @favorite_drawing = current_user.user_favorite_drawings.new(
       favorite_drawing_params
     )
     if @favorite_drawing.save

@@ -4,6 +4,7 @@ DrawIt.Views.PortfoliosList = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.collection, "add", this.addPortfolio);
     this.addPortfolios();
+    $(".title").text("Portfolios")
   },
 
   addPortfolios: function () {

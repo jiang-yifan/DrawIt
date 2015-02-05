@@ -1,40 +1,59 @@
 DrawIt.Routers.Router = Backbone.Router.extend({
   routes:{
-    "":"mainDrawings",
+    "":"homePage",
     "drawings": "mainDrawings",
     "portfolios": "mainPortfolios",
     "portfolios/new": "newPortfolio",
     "drawings/favorites": "mainFavorites",
-    // "portfolios/:id": "showPortfolio"
+    "portfolios/:id": "showPortfolio",
   },
 
   initialize: function (options) {
+    this.$header = options.$header
     this.$rootEl = options.$rootEl;
     this.userDrawings = new DrawIt.Collections.Drawings();
     this.userPortfolios = new DrawIt.Collections.Portfolios();
+    this.userFavoriteDrawings =
+        new DrawIt.Collections.FavoriteDrawings();
+
+    this.createHeader();
+
+  },
+
+  createHeader: function () {
+    this.header = new DrawIt.Views.ProfileHeader();
+    this.$header.html(this.header.render().$el);
   },
 
   homePage: function () {
-    var mainPageView = new DrawIt.Views.MainPage({
-
-    });
-    this._swapView(mainPageView);
-  },
-
-  mainPortfolios: function () {
-    var mainPortfoliosView = new DrawIt.Views.PortfoliosMain({
-      portfolios: this.userPortfolios
-    });
-    this.userPortfolios.fetch();
-    this._swapView(mainPortfoliosView);
+    // var mainPageView = new DrawIt.Views.MainPage({
+    //
+    // });
+    // this._swapView(mainPageView);
   },
 
   mainDrawings: function () {
-    var mainDrawingsView = new DrawIt.Views.DrawingsMain({
-      drawings: this.userDrawings
+    var drawingsListView = new DrawIt.Views.DrawingsList({
+      collection: this.userDrawings
     })
     this.userDrawings.fetch();
-    this._swapView(mainDrawingsView);
+    this._swapView(drawingsListView);
+  },
+
+  mainFavorites: function () {
+    var favoritesListView = new DrawIt.Views.FavoritesList({
+      collection: this.userFavoriteDrawings
+    })
+    this.userFavoriteDrawings.fetch();
+    this._swapView(favoritesListView);
+  },
+
+  mainPortfolios: function () {
+    var portfoliosListView = new DrawIt.Views.PortfoliosList({
+      collection: this.userPortfolios
+    });
+    this.userPortfolios.fetch();
+    this._swapView(portfoliosListView);
   },
 
   showPortfolio: function (id) {

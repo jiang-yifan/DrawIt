@@ -1,0 +1,10 @@
+<div class="favorite">
+  <% if(drawing.escape("is_favorite") ==="true"){%>
+    <%="Favorited"%>
+  <% } else{ debugger %>
+    <%="Not Favorited"%>
+  <% } %>
+</div>
+<div class="heart">
+  hearts <%= drawing.escape("hearts_count") %>
+</div>

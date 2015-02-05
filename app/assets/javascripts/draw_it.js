@@ -5,7 +5,10 @@ window.DrawIt = {
   Modals: {},
   Routers: {},
   initialize: function() {
-    new DrawIt.Routers.Router({$rootEl: $('#content')});
+    new DrawIt.Routers.Router({
+      $rootEl: $('#content'),
+      $header: $('#header')
+      });
     Backbone.history.start();
   }
 };

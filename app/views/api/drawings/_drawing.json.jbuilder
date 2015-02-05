@@ -11,10 +11,16 @@ if show_comments
             show_hearts: true
             end
       end
-end 
+end
 
 if show_hearts
   json.hearts_count drawing.hearts.count
   json.partial! "api/hearts/user_hearted",
     hearts: drawing.hearts
+
+  if current_user.favorite_drawing_ids.include?(drawing.id)
+    json.is_favorite true
+  else
+    json.is_favorite false
+  end
 end

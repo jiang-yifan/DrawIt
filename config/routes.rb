@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :portfolios
     resources :comments
     resources :favorite_drawings
+    resources :user_friends
   end
 end

@@ -1,0 +1,24 @@
+.profile-header{
+  width: 900px;
+  margin-left: 100px;
+}
+
+.title{
+  float:left;
+  /*font: 32px;*/
+}
+
+.header-button{
+  float:right;
+  /*font: bold 32px*/
+}
+
+.profile-nav-link{
+  padding-left: 20px;
+  color: blue;
+  cursor: pointer;
+}
+
+button{
+  cursor: pointer;
+}

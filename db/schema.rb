@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150205184559) do
+ActiveRecord::Schema.define(version: 20150205214606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,7 +106,23 @@ ActiveRecord::Schema.define(version: 20150205184559) do
   add_index "user_favorite_drawings", ["drawing_id"], name: "index_user_favorite_drawings_on_drawing_id", using: :btree
   add_index "user_favorite_drawings", ["user_id"], name: "index_user_favorite_drawings_on_user_id", using: :btree
 
+  create_table "user_friends", force: :cascade do |t|
+    t.integer  "friend_id",                      null: false
+    t.integer  "user_id",                        null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "status",     default: "pending", null: false
+  end
+
+  add_index "user_friends", ["friend_id"], name: "index_user_friends_on_friend_id", using: :btree
+  add_index "user_friends", ["user_id"], name: "index_user_friends_on_user_id", using: :btree
+
   create_table "user_tables", force: :cascade do |t|
+  end
+
+  create_table "userfriends", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

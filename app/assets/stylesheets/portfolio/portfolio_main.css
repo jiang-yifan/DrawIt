@@ -1,0 +1,10 @@
+.portfolio-thumbnail-wrapper{
+  width: 200px;
+  padding-left: 20px;
+  padding-top: 20px;
+  float:left;
+}
+
+.portfolio-thumbnail{
+  width:100%;
+}

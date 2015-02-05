@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resource :session
   namespace :api, defaults:{format: :json} do
     resources :drawings
-    resources :porfolios
+    resources :portfolios
+    resources :comments
   end
 end

@@ -1,0 +1,16 @@
+.drawings-preview{
+  height: 500px;
+  width: 300px;
+  float:left;
+}
+
+.portfolio-form{
+  height: 500px;
+  width: 300px;
+  float: left;
+}
+
+.drawing-cover-thumbnail-wrapper{
+  max-height: 300px;
+  max-width: 300px;
+}

@@ -17,6 +17,7 @@
 //= require backbone
 //= require draw_it
 //= require serialize_json
+//= require modal
 //= require_tree ./utils
 //= require_tree ../templates
 //= require_tree ./models

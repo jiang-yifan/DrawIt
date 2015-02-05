@@ -2,6 +2,7 @@ window.DrawIt = {
   Models: {},
   Collections: {},
   Views: {},
+  Modals: {},
   Routers: {},
   initialize: function() {
     new DrawIt.Routers.Router({$rootEl: $('#content')});

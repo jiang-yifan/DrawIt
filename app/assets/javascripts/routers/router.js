@@ -1,16 +1,16 @@
 DrawIt.Routers.Router = Backbone.Router.extend({
   routes:{
-    "":"homePage",
+    "":"mainDrawings",
     "drawings": "mainDrawings",
-    "drawings/new": "newDrawing",
-    // "porfolios": "showPorfolios"
-    "porfolios/new": "newPorfolio"// maybe make modal instead
+    "portfolios": "mainPortfolios",
+    "portfolios/new": "newPortfolio"
+    // "portfolios/:id": "showPortfolio"
   },
 
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
     this.userDrawings = new DrawIt.Collections.Drawings();
-    this.userPorfolios = new DrawIt.Collections.Porfolios();
+    this.userPortfolios = new DrawIt.Collections.Portfolios();
   },
 
   homePage: function () {
@@ -20,36 +20,51 @@ DrawIt.Routers.Router = Backbone.Router.extend({
     this._swapView(mainPageView);
   },
 
+  mainPortfolios: function () {
+    var mainPortfoliosView = new DrawIt.Views.PortfoliosMain({
+      portfolios: this.userPortfolios
+    });
+    this.userPortfolios.fetch();
+    this._swapView(mainPortfoliosView);
+  },
+
   mainDrawings: function () {
     var mainDrawingsView = new DrawIt.Views.DrawingsMain({
-      drawings: this.userDrawings,
-      porfolios: this.userPorfolios
+      drawings: this.userDrawings
     })
     this.userDrawings.fetch();
     this._swapView(mainDrawingsView);
   },
 
-  newDrawing: function () {
-    var newDrawingView = new DrawIt.Views.NewDrawingForm({
-      collection: this.userDrawings
+  showPortfolio: function (id) {
+    var portfolio = this.userPortfolios.getOrFetch(id, "Portfolio");
+    var portfolioShowView = new DrawIt.Views.PortfolioShow({
+      model: portfolio
     });
-    this._swapView(newDrawingView);
+    this._swapView(portfolioShowView);
   },
 
-  newPorfolio: function () {
-    var newPorfolioView = new DrawIt.Views.NewPorfolio({
+  newPortfolio: function () {
+    var newPortfolioView = new DrawIt.Views.NewPortfolio({
       collection: this.userDrawings
     });
-    this.userDrawings.fetch();
-    this._swapView(newPorfolioView);
+
+    //WHAT?????
+    this.userDrawings.fetch({
+      succes: function () {
+        console.log("fetched succes");
+      }
+    });
+    debugger
+    this._swapView(newPortfolioView);
   },
 
-  // showPorfolios: function () {
-  //   var porfoliosIndexView = new DrawIt.Views.PorfoliosMain({
-  //     collection: this.userPorfolios
+  // showPortfolios: function () {
+  //   var portfoliosIndexView = new DrawIt.Views.PortfoliosMain({
+  //     collection: this.userPortfolios
   //   });
-  //   this.userPorfolios.fetch();
-  //   this._swapView(porfoliosIndexView)
+  //   this.userPortfolios.fetch();
+  //   this._swapView(portfoliosIndexView)
   // }
 
   _swapView: function (view) {

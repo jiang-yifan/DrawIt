@@ -1,14 +1,12 @@
 DrawIt.Views.DrawingsList = Backbone.CompositeView.extend({
-  template: JST["drawing/drawing_list"],
+  template: JST["drawing/drawings_list"],
 
   initialize: function () {
     this.listenTo(this.collection, "add", this.addDrawing);
-    this.listenTo(this.collection, "sync", this.addDrawings)
     this.addDrawings();
   },
 
   addDrawings: function () {
-    this.removeSubviews();
     this.collection.each(this.addDrawing.bind(this));
   },
 
@@ -24,7 +22,7 @@ DrawIt.Views.DrawingsList = Backbone.CompositeView.extend({
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
-    
+
     return this;
   }
 

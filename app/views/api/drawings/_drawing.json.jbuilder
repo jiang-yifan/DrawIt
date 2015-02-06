@@ -11,6 +11,12 @@ if show_comments
             show_hearts: true
             end
       end
+
+  json.tags do
+    json.array!(drawing.tags) do |tag|
+      json.partial! 'api/tags/tag', tag: tag
+    end
+  end
 end
 
 if show_hearts

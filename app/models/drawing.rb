@@ -14,6 +14,13 @@ class Drawing < ActiveRecord::Base
   )
 
   has_many(
+    :taggings,
+    as: :taggable,
+    dependent: :destroy,
+    inverse_of: :taggable
+  )
+
+  has_many(
     :hearts,
     as: :heartable,
     dependent: :destroy,
@@ -22,7 +29,8 @@ class Drawing < ActiveRecord::Base
 
   has_many :user_favorite_drawings, dependent: :destroy
 
-  has_many(:portfolios, through: :portfolio_drawings, source: :portfolio)
+  has_many :tags, through: :taggings
+  has_many :portfolios, through: :portfolio_drawings
 
   belongs_to :user
 end

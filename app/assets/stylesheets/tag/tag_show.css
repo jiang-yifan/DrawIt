@@ -1,0 +1,19 @@
+.tag-remove{
+  cursor: pointer;
+  float: left
+}
+.tag-detail{
+  float: left;
+}
+
+.tag-wrapper{
+  float: left;
+  width: 50px;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  background: #EFF2ED
+}
+
+.new-tag{
+  float: left
+}

@@ -2,11 +2,9 @@ DrawIt.Views.DrawingModalContent = Backbone.CompositeView.extend({
   template: JST["drawing/drawing_modal_content"],
 
   initialize: function () {
-
     this.listenTo(this.model, "sync", this.addComentsView);
     this.addCommentsView();
-
-    // this.render();
+    this.addTagsView();
   },
 
   addCommentsView: function () {
@@ -16,24 +14,12 @@ DrawIt.Views.DrawingModalContent = Backbone.CompositeView.extend({
     this.addSubview(".drawing-show-bottom", commentsListView);
   },
 
-  // showNewCommentForm: function () {
-  //   var newCommentFormView = new DrawIt.Views.NewCommentForm({
-  //     drawing: this.model,
-  //     collection: this.model.comments()
-  //   });
-  //   this.addSubview(".new-comment-form", newCommentFormView);
-  // },
-  //
-  // addComments: function () {
-  //   this.model.comments().each(this.addComment,this)
-  // },
-  //
-  // addComment: function (comment) {
-  //   var commentShowView = new DrawIt.Views.CommentShow({
-  //     model: comment
-  //   });
-  //   this.addSubview(".comments", commentShowView);
-  // },
+  addTagsView: function () {
+    var tagsListView = new DrawIt.Views.TagsList({
+      collection: this.model.tags()
+    });
+    this.addSubview(".tags", tagsListView);
+  },
 
   render: function () {
     var content = this.template({ drawing: this.model });

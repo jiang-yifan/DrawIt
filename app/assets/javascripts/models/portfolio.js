@@ -9,6 +9,10 @@ DrawIt.Models.Portfolio = Backbone.Model.extend({
       this.drawings().set(payload.drawings);
       delete payload.drawings;
     }
+    if(payload.tags){
+      this.tags().set(payload.tags);
+      delete payload.tags;
+    }
     return payload
   },
 
@@ -29,6 +33,15 @@ DrawIt.Models.Portfolio = Backbone.Model.extend({
 
     return this._drawings
   },
+
+  tags: function () {
+    if(!this._tags){
+      this._tags =
+        new DrawIt.Collections.Tags([],{drawing: this});
+    }
+
+    return this._tags
+  }
 
 }, {
   modelType: "Portfolio"

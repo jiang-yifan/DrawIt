@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :comments
     resources :favorite_drawings
     resources :user_friends
+    resources :tags
   end
 end

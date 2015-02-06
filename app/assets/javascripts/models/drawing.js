@@ -5,6 +5,10 @@ DrawIt.Models.Drawing = Backbone.Model.extend({
       this.comments().set(payload.comments);
       delete payload.comments;
     }
+    if(payload.tags){
+      this.tags().set(payload.tags);
+      delete payload.tags
+    }
 
     return payload
   },
@@ -16,6 +20,15 @@ DrawIt.Models.Drawing = Backbone.Model.extend({
     }
 
     return this._comments
+  },
+
+  tags: function () {
+    if(!this._tags){
+      this._tags =
+        new DrawIt.Collections.Tags([],{drawing: this});
+    }
+
+    return this._tags
   }
 }, {
   modelType: "Drawing"

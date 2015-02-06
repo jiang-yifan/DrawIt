@@ -1,7 +1,7 @@
 class Portfolio < ActiveRecord::Base
   validates :user, :name, presence: true
   validates :name, uniqueness:{scope: :user,
-    message: "You already have that portfolio"}
+    message: "already created"}
 
   belongs_to :user
   has_many(
@@ -19,11 +19,18 @@ class Portfolio < ActiveRecord::Base
   )
 
   has_many(
+    :taggings,
+    as: :taggable,
+    dependent: :destroy,
+    inverse_of: :taggable
+  )
+
+  has_many(
     :hearts,
     as: :heartable,
     dependent: :destroy,
     inverse_of: :heartable
   )
-
-  has_many :drawings, through: :portfolio_drawings, source: :drawing
+  has_many :tags, through: :taggings
+  has_many :drawings, through: :portfolio_drawings
 end

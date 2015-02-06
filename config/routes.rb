@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :favorite_drawings
     resources :user_friends
     resources :tags
+    resources :profiles
   end
 end

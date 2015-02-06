@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
 
   has_one :main_portfolio, dependent: :destroy
+  has_one :profile, dependent: :destroy
 
   has_many :sessions, dependent: :destroy
   has_many :drawings, dependent: :destroy

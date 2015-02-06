@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       MainPortfolio.create(user_id: @user.id)
+      Profile.create(user_id: @user.id)
       log_in! @user
       redirect_to root_url
     else

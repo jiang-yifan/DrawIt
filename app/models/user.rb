@@ -8,9 +8,10 @@ class User < ActiveRecord::Base
   has_many :sessions, dependent: :destroy
   has_many :drawings, dependent: :destroy
   has_many :portfolios, dependent: :destroy
-  has_many :comments, dependent: :destroy
-  has_many :hearts, dependent: :destroy
+  # has_many :comments, dependent: :destroy
+  # has_many :hearts, dependent: :destroy
   has_many :user_favorite_drawings, dependent: :destroy
+  has_many :activities, dependent: :destroy
 
   has_many(
     :friended_users,

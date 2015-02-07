@@ -1,6 +1,6 @@
 class Api::UserFriendsController < ApplicationController
   def index
-    @friends = current_user.friends
+    @friends = User.find(params[:user_id]).friends
   end
 
   def create
@@ -8,6 +8,11 @@ class Api::UserFriendsController < ApplicationController
       user_friend_params
     )
   end
+
+  def delete
+
+  end
+
   private
   def user_friend_params
     params.require(:user_friended).permit(:friend_id)

@@ -13,8 +13,8 @@ if show_comments
     end
 
   json.tags do
-    json.array!(portfolio.tags) do |tag|
-      json.partial! 'api/tags/tag', tag: tag
+    json.array!(portfolio.taggings) do |tagging|
+      json.partial! 'api/tags/tagging', tagging: tagging
     end
   end
 end

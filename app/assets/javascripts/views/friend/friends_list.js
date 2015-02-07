@@ -3,7 +3,7 @@ DrawIt.Views.FriendsList = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.collection, "add", this.addFriend);
-    this.addFriends();
+    this.addFriends();// bug adding initializing user to collection triggers add
     $(".title").text("Your Friends")
   },
 

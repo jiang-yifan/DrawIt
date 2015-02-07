@@ -1,6 +1,6 @@
 class Api::FavoriteDrawingsController < ApplicationController
   def index
-    @favorite_drawings = current_user.favorite_drawings
+    @favorite_drawings = User.find(params[:user_id]).favorite_drawings
   end
 
   def create

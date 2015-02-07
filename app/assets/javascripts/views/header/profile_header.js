@@ -10,24 +10,51 @@ DrawIt.Views.ProfileHeader = Backbone.CompositeView.extend({
     "click #friends": "navigateFriends"
   },
 
+  initialize: function () {
+    this.listenTo(this.model, "sync", this.addCover);
+  },
+
+  addCover: function () {
+    var profileCoverView = new DrawIt.Views.ProfileCover({
+      model: this.model,
+      el: $(".profile-cover")
+    });
+    this.addSubview(".profile-cover", profileCoverView);
+  },
+
   navigateDrawings: function () {
-    Backbone.history.navigate("#drawings", {trigger: true})
+    Backbone.history.navigate(
+      "#users/"+ this.model.userId + "/drawings",
+      {trigger: true}
+    );
   },
 
   navigateFavorites: function () {
-    Backbone.history.navigate("#drawings/favorites", {trigger: true})
+    Backbone.history.navigate(
+      "#users/"+ this.model.userId + "/drawings/favorites",
+      {trigger: true}
+    );
   },
 
   navigateFriends: function () {
-    Backbone.history.navigate("friends", {trigger: true})
+    Backbone.history.navigate(
+      "#users/"+ this.model.userId + "/friends",
+      {trigger: true}
+    );
   },
 
   navigateNewPortfolio: function (event) {
-    Backbone.history.navigate("#portfolios/new", {trigger: true})
+    Backbone.history.navigate(
+      "#portfolios/new",
+      {trigger: true}
+    );
   },
 
   navigatePortfolios: function () {
-    Backbone.history.navigate("#portfolios", {trigger: true})
+    Backbone.history.navigate(
+      "#users/"+ this.model.userId + "/portfolios",
+      {trigger: true}
+    );
   },
 
   showNewDrawingForm: function (event) {

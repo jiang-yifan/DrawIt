@@ -1,5 +1,6 @@
 <div class="friend-preview">
-  <%= friend.escape("username")%>
+  <img class="avatar" src="<%= friend.escape('avatar_url')%>"/>
+  <span class="friend-name"><%= friend.escape("username")%></span>
   Mutual Friends: <%= friend.escape("mutual_friends_count")%>
 </div>
 

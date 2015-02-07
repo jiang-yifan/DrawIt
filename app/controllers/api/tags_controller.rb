@@ -13,6 +13,15 @@ class Api::TagsController < ApplicationController
     end
   end
 
+  def destroy
+    @tagging = Tagging.find(params[:id])
+    if @tagging.destroy
+      render json: @tagging
+    else
+      render json: @tagging.errors.full_messgaes, status: 422
+    end
+  end
+
   private
   def tagging_params
     params.require(:tag).permit(

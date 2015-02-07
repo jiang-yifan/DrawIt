@@ -24,7 +24,6 @@ DrawIt.Views.DrawingModalContent = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template({ drawing: this.model });
     this.$el.html(content);
-    this.attachSubviews();
     return this;
   }
 });

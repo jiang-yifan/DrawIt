@@ -1,8 +1,15 @@
-DrawIt.Views.FriendThumbnail = Backbone.View.extend({
+DrawIt.Views.FriendThumbnail = Backbone.CompositeView.extend({
   template: JST["friend/friend_thumbnail"],
   className: "friend-thumbnail-wrapper",
   events:{
+    "click .avatar, .friend-name": "navigateProfile"
+  },
 
+  navigateProfile: function () {
+    Backbone.history.navigate(
+      "#users/" + this.model.id,
+      {trigger: true}
+    );
   },
 
   render: function () {

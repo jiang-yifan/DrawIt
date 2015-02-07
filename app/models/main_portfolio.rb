@@ -1,30 +1,11 @@
 class MainPortfolio < ActiveRecord::Base
+  include HasTags
+  include HasComments
+  include HasHearts
+  include HasDrawings
   validates :user, :name, presence: true
 
   belongs_to :user
-
-  has_many(
-    :portfolio_drawings,
-    as: :portfolio,
-    dependent: :destroy,
-    inverse_of: :portfolio
-  )
-
-  has_many(
-    :comments,
-    as: :commentable,
-    dependent: :destroy,
-    inverse_of: :commentable
-  )
-
-  has_many(
-    :hearts,
-    as: :heartable,
-    dependent: :destroy,
-    inverse_of: :heartable
-  )
-
-  has_many :drawings, through: :portfolio_drawings, source: :drawing
 end
 #
 # validates :drawing, uniqueness:{scope: :user,

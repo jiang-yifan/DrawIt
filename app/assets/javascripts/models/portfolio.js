@@ -1,12 +1,13 @@
 DrawIt.Models.Portfolio = Backbone.Model.extend({
   urlRoot: "api/portfolios",
+
   parse: function (payload) {
     if(payload.comments){
-      this.comments().set(payload.comments);
+      this.comments().set(payload.comments, {parse: true});
       delete payload.comments;
     }
     if(payload.drawings){
-      this.drawings().set(payload.drawings);
+      this.drawings().set(payload.drawings, {parse: true});
       delete payload.drawings;
     }
     if(payload.tags){

@@ -1,6 +1,6 @@
 class Api::DrawingsController < ApplicationController
   def index
-    @drawings = current_user.drawings
+    @drawings = User.find(params[:user_id]).drawings
   end
 
   def create

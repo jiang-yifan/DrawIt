@@ -1,5 +1,6 @@
 DrawIt.Models.Drawing = Backbone.Model.extend({
-  urlRoot:"api/drawings",
+  urlRoot: "api/drawings",
+
   parse: function (payload) {
     if(payload.comments){
       this.comments().set(payload.comments);

@@ -1,13 +1,13 @@
 DrawIt.Collections.Drawings = Backbone.Collection.extend({
-  url: "api/drawings",
+  url: function () {
+    return "api/users/" + this.userId + "/drawings";
+  },
   model: DrawIt.Models.Drawing,
 
-  initialize: function (model, options) {
-    if(options){
-      if(options.portfolio){
-        this.portfolio = options.portfolio;
-      }
+  initialize: function (models, options) {
+    this.userId = options.userId;
+    if(options.portfolio){
+      this.portfolio = options.portfolio;
     }
-  },
-
+  }
 });

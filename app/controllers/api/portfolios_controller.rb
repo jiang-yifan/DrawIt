@@ -1,6 +1,6 @@
 class Api::PortfoliosController < ApplicationController
   def index
-    @portfolios = current_user.portfolios
+    @portfolios = User.find(params[:user_id]).portfolios
     render json: @portfolios
   end
 

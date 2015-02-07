@@ -1,72 +1,120 @@
 DrawIt.Routers.Router = Backbone.Router.extend({
   routes:{
     "":"homePage",
-    "drawings": "mainDrawings",
-    "portfolios": "mainPortfolios",
+    "users/:user_id/drawings": "mainDrawings",
+    "users/:user_id/drawings/favorites": "mainFavorites",
+    "users/:user_id/portfolios": "mainPortfolios",
     "portfolios/new": "newPortfolio",
-    "drawings/favorites": "mainFavorites",
     "portfolios/:id": "showPortfolio",
-    "friends": "mainFriends"
+    "users/:user_id/friends": "mainFriends",
+    "users/:user_id": "mainProfile"
   },
 
   initialize: function (options) {
-    this.$header = options.$header
+    this.currentUserId = options.userId;
+    this.$header = options.$header;
     this.$rootEl = options.$rootEl;
-    this.userDrawings = new DrawIt.Collections.Drawings();
-    this.userPortfolios = new DrawIt.Collections.Portfolios();
-    this.userFavoriteDrawings =
-        new DrawIt.Collections.FavoriteDrawings();
-    this.userFriends = new DrawIt.Collections.Friends();
-    this.createHeader();
+    this.$cover = options.$cover;
 
+    this.initiateUser();
+    this.createHeader();
+  },
+
+  createCover: function (id) {
+    if(!(this.profile && this.profile.id == id)){
+      this.profile = new DrawIt.Models.Profile({userId: id});
+      this.profile.fetch();
+      this.profileHeader && this.profileHeader.remove();
+      this.profileHeader = new DrawIt.Views.ProfileHeader({
+        model: this.profile
+      });
+      this.$cover.html(this.profileHeader.render().$el);
+    }
   },
 
   createHeader: function () {
-    this.header = new DrawIt.Views.ProfileHeader();
-    this.$header.html(this.header.render().$el);
+    this.homeHeader = new DrawIt.Views.HomePageHeader({
+      model: this.userProfile
+    });
+    this.$header.html(this.homeHeader.render().$el);
+  },
+
+  initiateUser: function () {
+    this.currentUser = new DrawIt.Models.User({
+      id: this.currentUserId
+    });
+    this.userProfile = new DrawIt.Models.Profile({
+      userId: this.currentUserId
+    });
   },
 
   homePage: function () {
-    // var mainPageView = new DrawIt.Views.MainPage({
-    //
-    // });
-    // this._swapView(mainPageView);
+
   },
 
-  mainDrawings: function () {
-    var drawingsListView = new DrawIt.Views.DrawingsList({
-      collection: this.userDrawings
+  mainDrawings: function (userId) {
+    this.createCover(userId);
+    this.drawings = new DrawIt.Collections.Drawings([], {
+      userId: userId
     });
-    this.userDrawings.fetch();
+    var drawingsListView = new DrawIt.Views.DrawingsList({
+      collection: this.drawings
+    });
+    this.drawings.fetch();
     this._swapView(drawingsListView);
   },
 
-  mainFavorites: function () {
-    var favoritesListView = new DrawIt.Views.FavoritesList({
-      collection: this.userFavoriteDrawings
+  mainFavorites: function (userId) {
+    this.createCover(userId);
+    this.favoriteDrawings = new DrawIt.Collections.FavoriteDrawings([], {
+      userId: userId
     });
-    this.userFavoriteDrawings.fetch();
+    var favoritesListView = new DrawIt.Views.FavoritesList({
+      collection: this.favoriteDrawings
+    });
+    this.favoriteDrawings.fetch();
     this._swapView(favoritesListView);
   },
 
-  mainFriends: function () {
+  mainFriends: function (userId) {
+    this.createCover(userId);
+    this.friends = new DrawIt.Collections.Friends([], {
+      userId: userId}
+    );
     var friendsListView = new DrawIt.Views.FriendsList({
-      collection: this.userFriends
+      collection: this.friends
     });
-    this.userFriends.fetch();
+    this.friends.fetch();
     this._swapView(friendsListView);
   },
 
-  mainPortfolios: function () {
-    var portfoliosListView = new DrawIt.Views.PortfoliosList({
-      collection: this.userPortfolios
+  mainPortfolios: function (userId) {
+    this.createCover(userId);
+    this.portfolios = new DrawIt.Collections.Portfolios([], {
+      userId: userId
     });
-    this.userPortfolios.fetch();
+    var portfoliosListView = new DrawIt.Views.PortfoliosList({
+      collection: this.portfolios
+    });
+    this.portfolios.fetch();
     this._swapView(portfoliosListView);
   },
 
+  mainProfile: function (userId) {
+    this.createCover(userId);
+    this.mainPortfolio = new DrawIt.Models.MainPortfolio({userId: userId});
+    this.activities = new DrawIt.Collections.Activities([],{userId: userId});
+
+    var mainUserPageView = new DrawIt.Views.MainUserPage({
+      mainPortfolio: this.mainPortfolio,
+      activities: this.activities
+    });
+
+    this._swapView(mainUserPageView);
+  },
+
   showPortfolio: function (id) {
-    var portfolio = this.userPortfolios.getOrFetch(id, "Portfolio");
+    var portfolio = new DrawIt.Models.Portfolio({id: id})
     var portfolioShowView = new DrawIt.Views.PortfolioShow({
       model: portfolio
     });
@@ -74,12 +122,17 @@ DrawIt.Routers.Router = Backbone.Router.extend({
   },
 
   newPortfolio: function () {
+    this.createCover(this.currentUserId);
+    this.userDrawings = new DrawIt.Collections.Drawings([], {
+      userId: this.currentUserId
+    });
     var newPortfolioView = new DrawIt.Views.NewPortfolio({
       collection: this.userDrawings
     });
     this.userDrawings.fetch();
     this._swapView(newPortfolioView);
   },
+
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();

@@ -1,0 +1,14 @@
+.nav-container{
+  width: 900px;
+  margin: 0 auto;
+  background: green;
+}
+
+.site-title{
+  font: 20px;
+  float: left
+}
+
+.home-nav-link{
+  float: right;
+}

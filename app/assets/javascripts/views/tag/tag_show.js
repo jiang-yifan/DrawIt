@@ -6,15 +6,10 @@ DrawIt.Views.TagShow = Backbone.View.extend({
   },
 
   removeTag: function (event) {
-    debugger
     event.preventDefault();
     $(event.currentTarget).prop("disabled", true);
     var view = this;
-    this.model.destroy({
-      success: function () {
-        view.collection.remove(view.model);
-      }
-    });
+    this.model.destroy();
   },
 
   render: function () {

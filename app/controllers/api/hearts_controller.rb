@@ -7,6 +7,10 @@ class Api::HeartsController < ApplicationController
     end
   end
 
+  def delete
+    @heart = Heart.find(params[:id])
+  end
+
   private
   def heart_params
     params.require(:heart).permit(

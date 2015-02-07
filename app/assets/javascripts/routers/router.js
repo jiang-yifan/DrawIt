@@ -49,7 +49,7 @@ DrawIt.Routers.Router = Backbone.Router.extend({
   },
 
   homePage: function () {
-
+    this.profileHeader && this.profileHeader.remove();
   },
 
   mainDrawings: function (userId) {

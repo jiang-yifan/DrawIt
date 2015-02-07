@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206211233) do
+ActiveRecord::Schema.define(version: 20150207005600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,16 @@ ActiveRecord::Schema.define(version: 20150206211233) do
   end
 
   add_index "drawings", ["user_id"], name: "index_drawings_on_user_id", using: :btree
+
+  create_table "followings", force: :cascade do |t|
+    t.integer  "followed_id", null: false
+    t.integer  "followee_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "followings", ["followed_id"], name: "index_followings_on_followed_id", using: :btree
+  add_index "followings", ["followee_id"], name: "index_followings_on_followee_id", using: :btree
 
   create_table "hearts", force: :cascade do |t|
     t.integer  "heartable_id",   null: false

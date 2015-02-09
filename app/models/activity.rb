@@ -3,4 +3,8 @@ class Activity < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :activity, polymorphic: true
+
+  def self.friends_activities current_user
+    Activity.where(user_id: current_user.friend_ids)
+  end
 end

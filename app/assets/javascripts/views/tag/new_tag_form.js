@@ -12,14 +12,9 @@ DrawIt.Views.NewTagForm = Backbone.View.extend({
     data.tag.taggable_id = this.collection.commentedOn.id
     data.tag.taggable_type =
         this.collection.commentedOn.constructor.modelType;
-    var newTag = new DrawIt.Models.Tag()
+    var newTag = new DrawIt.Models.Tag(data)
 
-    var view = this;
-    newTag.save(data, {
-      success: function () {
-        view.collection.add(newTag);
-      }
-    });
+    this.collection.create(newTag);
   },
 
   render: function () {

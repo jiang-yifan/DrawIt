@@ -3,6 +3,7 @@ class Drawing < ActiveRecord::Base
   include HasComments
   include HasHearts
   include UpdatesActivity
+  include TopDrawings
   validates :user, :file_url, presence: true
   has_many(
     :portfolio_drawings,

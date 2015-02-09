@@ -1,0 +1,16 @@
+.notification-avatar{
+  width: 30px;
+  height: 30px;
+  float: left;
+  padding: 2px;
+}
+
+.notification-content{
+  float: left;
+  margin: auto auto;
+  padding-top: 10px;
+}
+
+.notification-wrapper{
+  background: purple;
+}

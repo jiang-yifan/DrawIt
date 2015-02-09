@@ -20,6 +20,15 @@
    clear: both;
  }
 
+ img{
+   width: 100%;
+ }
+
+ body{
+   margin: 0;
+ }
+
  #content{
-   margin-left: 100px;
+   width: 900px;
+   margin: 0 auto;
  }

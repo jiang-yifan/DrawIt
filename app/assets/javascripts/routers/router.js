@@ -50,6 +50,11 @@ DrawIt.Routers.Router = Backbone.Router.extend({
 
   homePage: function () {
     this.profileHeader && this.profileHeader.remove();
+    var homePageView = new DrawIt.Views.MainPage({
+      model: this.userProfile
+    });
+    this.userProfile.fetch();
+    this._swapView(homePageView);
   },
 
   mainDrawings: function (userId) {
@@ -138,5 +143,8 @@ DrawIt.Routers.Router = Backbone.Router.extend({
     this._currentView && this._currentView.remove();
     this._currentView = view;
     this.$rootEl.html(view.render().$el);
+    if(view.onRender){
+      view.onRender();
+    }
   },
 });

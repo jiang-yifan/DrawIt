@@ -1,5 +1,7 @@
 DrawIt.Views.MainUserPage = Backbone.CompositeView.extend({
   template: JST["profile/main_user_page"],
+  className: "main-user group",
+
   initialize: function (options) {
     this.mainPortfolio = options.mainPortfolio;
     this.activities = options.activities;

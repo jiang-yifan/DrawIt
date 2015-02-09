@@ -7,11 +7,10 @@ class User < ActiveRecord::Base
   has_one :main_portfolio, dependent: :destroy
   has_one :profile, dependent: :destroy
 
+  has_many :notifications, dependent: :destroy
   has_many :sessions, dependent: :destroy
   has_many :drawings, dependent: :destroy
   has_many :portfolios, dependent: :destroy
-  # has_many :comments, dependent: :destroy
-  # has_many :hearts, dependent: :destroy
   has_many :user_favorite_drawings, dependent: :destroy
   has_many :activities, dependent: :destroy
 

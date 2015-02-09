@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150207005600) do
+ActiveRecord::Schema.define(version: 20150209190044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,21 @@ ActiveRecord::Schema.define(version: 20150207005600) do
   end
 
   add_index "main_portfolios", ["user_id"], name: "index_main_portfolios_on_user_id", using: :btree
+
+  create_table "notifications", force: :cascade do |t|
+    t.string   "status",          default: "unviewed", null: false
+    t.string   "content",                              null: false
+    t.integer  "initiator_id",                         null: false
+    t.integer  "notifiable_id",                        null: false
+    t.string   "notifiable_type",                      null: false
+    t.integer  "user_id",                              null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
+
+  add_index "notifications", ["initiator_id"], name: "index_notifications_on_initiator_id", using: :btree
+  add_index "notifications", ["notifiable_type", "notifiable_id"], name: "index_notifications_on_notifiable_type_and_notifiable_id", using: :btree
+  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
 
   create_table "portfolio_drawings", force: :cascade do |t|
     t.integer  "drawing_id",     null: false

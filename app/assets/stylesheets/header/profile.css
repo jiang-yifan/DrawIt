@@ -1,6 +1,6 @@
 .profile-header{
   width: 900px;
-  margin-left: 100px;
+  margin: 0 auto;
 }
 
 .title{
@@ -14,11 +14,18 @@
 }
 
 .profile-nav-link{
-  padding-left: 20px;
+  padding: 10px;
   color: blue;
   cursor: pointer;
+  border: 1px solid grey;
+  float: left;
 }
 
 button{
   cursor: pointer;
+}
+
+.profile-nav{
+  padding-left: 300px;
+  border: 1px solid grey;
 }

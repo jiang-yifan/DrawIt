@@ -28,20 +28,16 @@ DrawIt.Views.DrawingThumbnail = Backbone.CompositeView.extend({
 
   showDrawing: function (event) {
     event.preventDefault();
-    if(!this.showing){
-      this.showing = true;
-      this.model.fetch()
-      this.modalView = new DrawIt.Views.DrawingModalShow({
-        model: this.model
-      });
-      this.addSubview(".modal-container", this.modalView);
-      this.listenTo(this.modalView, "closeModal", this.unShowDrawing);
-    }
+    this.model.fetch()
+    this.modalView = new DrawIt.Views.DrawingModalShow({
+      model: this.model
+    });
+    this.addSubview(".modal-container", this.modalView);
+    this.listenTo(this.modalView, "closeModal", this.unShowDrawing);
   },
 
   unShowDrawing: function () {
     this.removeSubview('.modal-container', this.modalView)
-    this.showing = false;
   },
 
   render: function () {

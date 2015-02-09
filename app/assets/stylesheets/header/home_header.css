@@ -1,14 +1,42 @@
 .nav-container{
   width: 900px;
-  margin: 0 auto;
-  background: green;
+  margin: auto auto;
 }
 
 .site-title{
   font: 20px;
-  float: left
+  float: left;
+  padding: 5px 0;
+  border: 1px solid grey;
 }
 
 .home-nav-link{
   float: right;
+  height: 100%;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  position: relative;
+}
+
+.main-nav{
+  height: 30px;
+  background: green;
+}
+
+.notifications-wrapper{
+  z-index: 100;
+  position: absolute;
+  right: -0px;
+  width:300px;
+  height: 20px;
+  background: yellow;
+  display: none;
+}
+
+.notifications:hover .notifications-wrapper{
+
+  display: block;
+}
+
+.badge{
 }

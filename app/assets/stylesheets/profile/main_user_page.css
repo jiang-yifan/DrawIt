@@ -1,0 +1,19 @@
+.main-user{
+  width: 900px;
+  margin: 0 auto;
+}
+
+.profile-left{
+  width: 450px;
+  height: 300px;
+  float: left;
+  background: teal;
+}
+
+.profile-right{
+  width: 400px;
+  height: 300px;
+  margin-left: 50px;
+  float: left;
+  background: lightblue;
+}

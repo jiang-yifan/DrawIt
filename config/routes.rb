@@ -19,7 +19,9 @@ Rails.application.routes.draw do
       resources :user_friends, only: [:index]
       resource :profile, only: [:update, :show]
     end
-
+    resources :notifications, only:[:index, :update]
+    resources :my_feeds, only:[:index]
+    resources :top_drawings, only:[:index]
     resources :drawings, except: [:index]
     resources :portfolios, except: [:index]
     resources :favorite_drawings, except: [:index]

@@ -8,7 +8,7 @@ module HasTags
       dependent: :destroy,
       inverse_of: :taggable
     )
-    
+
     has_many :tags, through: :taggings
   end
 end

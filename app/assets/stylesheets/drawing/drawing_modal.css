@@ -1,11 +1,9 @@
 .drawing-show-top{
   width: 600px;
-  height: 300px;
 }
 
 .drawing-show-left{
   width: 400px;
-  height: 300px;
   float: left;
 }
 
@@ -15,7 +13,6 @@
 
 .drawing-show-right{
   width: 180px;
-  height: 300px;
   overflow: scroll;
   padding-left:10px;
   float:left;

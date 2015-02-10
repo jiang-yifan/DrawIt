@@ -4,39 +4,32 @@
 }
 
 .site-title{
-  font: 20px;
+  font-size: 180%;
   float: left;
-  padding: 5px 0;
-  border: 1px solid grey;
+  padding-top: 7px;
+  cursor: pointer;
+  color: white;
+}
+
+.search-container{
+  width: 200px;
+  float: left;
+  padding-top: 12px;
+  padding-left: 10px;
 }
 
 .home-nav-link{
   float: right;
   height: 100%;
   border-left: 1px solid grey;
-  border-right: 1px solid grey;
   position: relative;
+  margin-top: 12px;
+  padding: 0 5px;
+  cursor: pointer;
+  color: white;
 }
 
 .main-nav{
-  height: 30px;
-  background: green;
-}
-
-.notifications-wrapper{
-  z-index: 100;
-  position: absolute;
-  right: -0px;
-  width:300px;
-  height: 20px;
-  background: yellow;
-  display: none;
-}
-
-.notifications:hover .notifications-wrapper{
-
-  display: block;
-}
-
-.badge{
+  height: 40px;
+  background: #108784;
 }

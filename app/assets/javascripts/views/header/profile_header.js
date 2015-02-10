@@ -11,7 +11,7 @@ DrawIt.Views.ProfileHeader = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-    this.listenTo(this.model, "sync", this.addCover);
+    this.listenTo(this.model, "sync", this.synced);
   },
 
   addCover: function () {
@@ -65,8 +65,13 @@ DrawIt.Views.ProfileHeader = Backbone.CompositeView.extend({
     // $(".new-drawing-container").dialog({modal: true})
   },
 
+  synced: function () {
+    this.addCover();
+    this.render();
+  },
+
   render: function () {
-    var content = this.template();
+    var content = this.template({profile: this.model});
     this.$el.html(content);
 
     this.attachSubviews();

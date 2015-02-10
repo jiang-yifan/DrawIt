@@ -2,11 +2,11 @@ DrawIt.Views.NotificationsList = Backbone.CompositeView.extend({
   template: JST['notification/notifications_list'],
 
   initialize: function () {
-    this.listenTo(this.collection, "add", this.addNotifications);
+    this.listenTo(this.collection, "add", this.addNotification);
+    this.addNotifications();
   },
 
   addNotifications: function () {
-    this.removeSubviews();
     this.collection.each(this.addNotification.bind(this));
   },
 
@@ -20,7 +20,6 @@ DrawIt.Views.NotificationsList = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template();
     this.$el.html(content);
-
     return this;
   }
 });

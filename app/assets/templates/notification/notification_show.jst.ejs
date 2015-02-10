@@ -1,4 +1,5 @@
-<div class='notification-wrapper'>
+<div class="notification-wrapper group
+  <%= notification.escape('status') %>">
   <div class='notification-avatar'>
     <img src="<% notification.escape('avatar_url') %>"/>
   </div>
@@ -6,6 +7,5 @@
   <div class='notification-content'>
     <span><%= notification.escape("content") %></span>
   </div>
-
-  <div class='modal-container'><div>
 </div>
+<div class='notification-modal-container'></div>

@@ -1,0 +1,41 @@
+.search{
+  width: 300px;
+  height: 14px;
+}
+
+.search-wrapper{
+  width: 300px;
+  height: 20px;
+  border: 1px solid grey;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.search-results{
+  z-index: 1;
+  width: 300px;
+  top: 35px;
+  position: absolute;
+  background: cyan;
+  border: 1px solid grey;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px 1px #818182;
+}
+
+.search-result-img{
+  width: 40px;
+  float:left;
+  height: 40px;
+  padding: 8px;
+}
+
+.search-result-content{
+  float: left;
+  font-size: 130%;
+  padding-top: 15px;
+}
+
+.search-result-wrapper{
+  border-bottom: 1px solid grey;
+}

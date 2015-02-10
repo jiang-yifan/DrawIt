@@ -10,11 +10,11 @@
     <span id="portfolios" class='profile-nav-link'>Portfolios</span>
     <span id="friends" class='profile-nav-link'>Friends</span>
   </div>
-
-  <div class="header group">
-    <span class="title"></span>
-    <button id="new_portfolio" class="header-button">Create Portfolio</button>
-    <button id="new_drawing" class="header-button">Add Drawing</button>
-  </div>
-
+  <% if(profile.get('is_user')){ %>
+    <div class="header group">
+      <span class="title"></span>
+      <button id="new_portfolio" class="header-button">Create Portfolio</button>
+      <button id="new_drawing" class="header-button">Add Drawing</button>
+    </div>
+  <% } %>
 </div>

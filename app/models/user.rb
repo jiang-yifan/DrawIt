@@ -2,11 +2,13 @@ class User < ActiveRecord::Base
   include HasPassword
   include HasFollowings
   include HasFriends
+  include HasFriendRequests
   validates :username, presence: true, uniqueness: true
 
   has_one :main_portfolio, dependent: :destroy
   has_one :profile, dependent: :destroy
 
+  has_many :comments, dependent: :destroy
   has_many :notifications, dependent: :destroy
   has_many :sessions, dependent: :destroy
   has_many :drawings, dependent: :destroy

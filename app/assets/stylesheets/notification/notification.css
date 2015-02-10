@@ -5,12 +5,53 @@
   padding: 2px;
 }
 
+.notification-wrapper{
+  background: #F7F7F7;
+  cursor: default;
+  border-top: 1px solid grey;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  box-shadow: 2px 2px 10px 1px #818182;
+}
+
 .notification-content{
   float: left;
   margin: auto auto;
   padding-top: 10px;
 }
 
-.notification-wrapper{
-  background: purple;
+.notification-title{
+  cursor: default;
+  background: #F7F7F7;
+  border-top: 1px solid grey;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+}
+
+.notifications-wrapper{
+  z-index: 100;
+  position: absolute;
+  right: -0px;
+  top: 28px;
+  width:300px;
+  max-height: 400px;
+  color: black;
+  border-bottom: 1px solid grey;
+  overflow: scroll;
+}
+
+.hidden{
+  display: none;
+}
+
+.unviewed{
+  background: #C6C9CF;
+}
+
+.badge{
+  font-size: 80%;
+  border: 1px solid black;
+  background: red;
+  border-radius: 11px;
+  padding: 0 3px;
 }

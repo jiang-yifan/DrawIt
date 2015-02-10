@@ -7,11 +7,13 @@ class Comment < ActiveRecord::Base
   belongs_to :user
 
   def create_notifications
-    Notification.create(
-      user_id: commentable.user.id,
-      initiator_id: user_id,
-      notifiable_id: commentable_id,
-      notifiable_type: commentable_type,
-      content: "#{user.username} has commented on your #{commentable_type.downcase}")
+    if commentable.user.id != user_id
+      Notification.create(
+        user_id: commentable.user.id,
+        initiator_id: user_id,
+        notifiable_id: commentable_id,
+        notifiable_type: commentable_type,
+        content: "#{user.username} has commented on your #{commentable_type.downcase}")
+    end
   end
 end

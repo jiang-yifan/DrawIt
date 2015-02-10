@@ -2,7 +2,7 @@ class Following < ActiveRecord::Base
   validates :followed, :followee, presence: true
   validates :followed, uniqueness: {scope: :followee,
           message: "already"}
-          
+
   belongs_to(
     :followed,
     class_name: "User",

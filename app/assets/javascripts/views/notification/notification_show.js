@@ -5,10 +5,11 @@ DrawIt.Views.NotificationShow = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-    this.notId = this.model.get('notifiable_id')
+    this.notId = this.model.get('notifiable_id');
   },
 
-  clicked: function () {
+  clicked: function (event) {
+    event.stopPropagation();
     var view = this;
     this.model.set("status", "viewed");
     this.model.save();
@@ -40,25 +41,27 @@ DrawIt.Views.NotificationShow = Backbone.CompositeView.extend({
   // },
 
   showDrawing: function () {
-    if(!this.showing){
-      this.showing = true;
-      var drawing = new DrawIt.Models.Drawing({id: this.notId})
-      var view = this;
-      drawing.fetch({
-        success: function () {
-          view.modalView = new DrawIt.Views.DrawingModalShow({
-            model: drawing
-          });
-          view.addSubview(".modal-container", view.modalView);
-          view.listenTo(view.modalView, "closeModal", view.unShowDrawing);
-        }
-      });
-    }
+    this.drawing = new DrawIt.Models.Drawing({id: this.notId})
+    this.drawing.fetch().done(this.showed.bind(this));
+  },
+
+  showed: function () {
+    this.showModal();
+    this.model.set("status", "viewed");
+    this.model.save();
+  },
+
+  showModal: function () {
+    this.modalView = new DrawIt.Views.DrawingModalShow({
+      model: this.drawing
+    });
+    this.addSubview(".notification-modal-container", this.modalView);
+    this.listenTo(this.modalView, "closeModal", this.unShowDrawing);
   },
 
   unShowDrawing: function () {
-    this.showing = false;
     this.removeSubview('.modal-container', this.modalView);
+    $('.notifications-wrapper').addClass("hidden");
   },
 
   render: function () {

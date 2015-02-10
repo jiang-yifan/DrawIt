@@ -29,5 +29,6 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :delete, :update]
     resources :tags,  only: [:create, :delete]
     resources :hearts, only: [:create, :delete]
+    resources :searches, only: [:index]
   end
 end

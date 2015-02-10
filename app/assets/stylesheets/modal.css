@@ -12,7 +12,7 @@
 
 .modal {
     z-index: 3;
-    position:absolute;
+    position:fixed;
     background:url(tint20.png) 0 0 repeat;
     background:white;
     border-radius:14px;

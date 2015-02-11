@@ -24,7 +24,3 @@ window.DrawIt = {
     Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  DrawIt.initialize();
-});

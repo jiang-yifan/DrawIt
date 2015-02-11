@@ -55,12 +55,12 @@ DrawIt.Views.NotificationShow = Backbone.CompositeView.extend({
     this.modalView = new DrawIt.Views.DrawingModalShow({
       model: this.drawing
     });
-    this.addSubview(".notification-modal-container", this.modalView);
+    $("#main").append(this.modalView.render().$el);
     this.listenTo(this.modalView, "closeModal", this.unShowDrawing);
+    this.modalView.onRender();
   },
 
   unShowDrawing: function () {
-    this.removeSubview('.modal-container', this.modalView);
     $('.notifications-wrapper').addClass("hidden");
   },
 

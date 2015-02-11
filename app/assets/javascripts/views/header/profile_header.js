@@ -10,8 +10,9 @@ DrawIt.Views.ProfileHeader = Backbone.CompositeView.extend({
     "click #friends": "navigateFriends"
   },
 
-  initialize: function () {
+  initialize: function (options) {
     this.listenTo(this.model, "sync", this.synced);
+    this.drawings = options.drawings;
   },
 
   addCover: function () {
@@ -58,11 +59,12 @@ DrawIt.Views.ProfileHeader = Backbone.CompositeView.extend({
   },
 
   showNewDrawingForm: function (event) {
-    var newDrawingForm = new DrawIt.Views.NewDrawingForm({
-      collection: this.collection
+    var newDrawingForm = new DrawIt.Views.NewDrawingModal({
+      userId: this.model.userId,
+      drawings: this.drawings
     });
-    this.addSubview(".new-drawing-container", newDrawingForm)
-    // $(".new-drawing-container").dialog({modal: true})
+    $("#main").append(newDrawingForm.render().$el);
+    newDrawingForm.onRender();
   },
 
   synced: function () {

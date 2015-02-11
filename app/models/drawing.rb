@@ -5,6 +5,7 @@ class Drawing < ActiveRecord::Base
   include UpdatesActivity
   include TopDrawings
   validates :user, :file_url, presence: true
+  validates :file_url, uniqueness: true
   has_many(
     :portfolio_drawings,
     dependent: :destroy,

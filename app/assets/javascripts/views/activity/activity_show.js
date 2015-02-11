@@ -1,6 +1,6 @@
 DrawIt.Views.ActivityShow = Backbone.CompositeView.extend({
   template: JST['activity/activity_show'],
-  className: 'activity-wrapper',
+  className: 'activity-wrapper group',
   initialize: function () {
     this.parseModel();
     this.listenTo(this.activity, "sync", this.synced);

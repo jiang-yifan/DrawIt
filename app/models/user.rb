@@ -22,9 +22,16 @@ class User < ActiveRecord::Base
     source: :drawing
   )
 
+  after_save :initiate_user
+
   def self.find_by_credentials(identifier, password)
     user = User.where("username = ?", identifier).first
     return nil unless user
     user.correct_password?(password) ? user : nil
+  end
+
+  def initiate_user
+    MainPortfolio.create(user_id: id)
+    Profile.create(user_id: id)
   end
 end

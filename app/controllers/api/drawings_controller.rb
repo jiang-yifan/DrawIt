@@ -5,7 +5,9 @@ class Api::DrawingsController < ApplicationController
 
   def create
     @drawing = current_user.drawings.new(drawing_params)
-    unless @drawing.save
+    if @drawing.save
+      render json: @drawing
+    else
       render json: @drawing.errors.full_messages, status: 422
     end
   end

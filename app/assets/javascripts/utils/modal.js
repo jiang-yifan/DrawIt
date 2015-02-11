@@ -5,6 +5,7 @@ Backbone.Modal = Backbone.CompositeView.extend({
 
   deleteModal: function (event) {
     $(window).unbind('resize.modal');
+    this.remove();
     this.trigger("closeModal");
   },
 
@@ -15,8 +16,8 @@ Backbone.Modal = Backbone.CompositeView.extend({
     left = Math.max($(window).width() - $(".modal").outerWidth(), 0) / 2;
 
     $('.modal').css({
-        top:top + $(window).scrollTop(),
-        left:left + $(window).scrollLeft()
+        top:top,
+        left:left
     });
   },
 

@@ -26,7 +26,8 @@ DrawIt.Routers.Router = Backbone.Router.extend({
       this.profile.fetch();
       this.profileHeader && this.profileHeader.remove();
       this.profileHeader = new DrawIt.Views.ProfileHeader({
-        model: this.profile
+        model: this.profile,
+        drawings: this.drawings
       });
       this.$cover.html(this.profileHeader.render().$el);
     }
@@ -58,10 +59,10 @@ DrawIt.Routers.Router = Backbone.Router.extend({
   },
 
   mainDrawings: function (userId) {
-    this.createCover(userId);
     this.drawings = new DrawIt.Collections.Drawings([], {
       userId: userId
     });
+    this.createCover(userId);
     var drawingsListView = new DrawIt.Views.DrawingsList({
       collection: this.drawings
     });

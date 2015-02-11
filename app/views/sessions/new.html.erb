@@ -8,3 +8,15 @@
   </label>
   <input type="submit" name="" value="Log In">
 </form>
+
+<canvas id="myCanvas" width="578" height="400"></canvas>
+
+<script type="text/javascript">
+  var c=document.getElementById("myCanvas");
+  var ctx=c.getContext("2d");
+  var img = new Image();
+  img.src = "https://www.filepicker.io/api/file/Cd6OPvPsTjataLgrn1ne";
+  img.onload = function () {
+    ctx.drawImage(img,10,10);
+  }
+</script>

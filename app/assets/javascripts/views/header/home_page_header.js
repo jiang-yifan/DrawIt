@@ -5,7 +5,8 @@ DrawIt.Views.HomePageHeader = Backbone.CompositeView.extend({
     "click .profile": 'navigateProfile',
     "click .site-title": 'navigateRoot',
     "click .favorites": 'navigateFavorites',
-    'click .notifications': "showNotifications"
+    'click .notifications': "showNotifications",
+    "click": "hideNotifications"
   },
 
   initialize: function () {
@@ -22,6 +23,8 @@ DrawIt.Views.HomePageHeader = Backbone.CompositeView.extend({
     });
     this.addSubview(".notifications-wrapper", notificationsListView);
     setInterval(this.refreshNotifications.bind(this), 30000);
+
+    $(":not(.notifications)").click(this.hideNotifications);
   },
 
   initiateSearchView: function () {
@@ -64,18 +67,18 @@ DrawIt.Views.HomePageHeader = Backbone.CompositeView.extend({
     );
   },
 
-  hideNotifications: function () {
-    debugger
+  hideNotifications: function (event) {
+    event.stopPropagation();
     $(".notifications-wrapper").addClass("hidden");
   },
 
   showNotifications: function (event) {
     event.preventDefault();
+    event.stopPropagation();
     if (!$(".notifications-wrapper").hasClass("hidden")) {
       $(".notifications-wrapper").addClass("hidden");
     } else {
       $(".notifications-wrapper").removeClass("hidden");
-      // $(".notifications-wrapper").focusout(this.hideNotifications.bind(this));
       $('.notification-title').click(function (event) {
         event.stopPropagation();
       });

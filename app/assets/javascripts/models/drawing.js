@@ -3,12 +3,16 @@ DrawIt.Models.Drawing = Backbone.Model.extend({
 
   parse: function (payload) {
     if(payload.comments){
-      this.comments().set(payload.comments);
+      this.comments().set(payload.comments, {parse: true});
       delete payload.comments;
     }
     if(payload.tags){
       this.tags().set(payload.tags);
       delete payload.tags
+    }
+    if(payload.avatar){
+      this.avatar().set(payload.avatar)
+      delete payload.avatar
     }
 
     return payload
@@ -30,6 +34,14 @@ DrawIt.Models.Drawing = Backbone.Model.extend({
     }
 
     return this._tags
+  },
+
+  avatar: function () {
+    if (!this._avatar) {
+      this._avatar =
+        new DrawIt.Models.Avatar();
+    }
+    return this._avatar;
   }
 }, {
   modelType: "Drawing"

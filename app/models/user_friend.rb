@@ -2,6 +2,7 @@ class UserFriend < ActiveRecord::Base
   include CreatesNotifications
   validates :user, :friend, presence: true
   validates :user, uniqueness:{scope: :friend}
+  validate :unique
 
   belongs_to :user
   belongs_to(
@@ -12,6 +13,12 @@ class UserFriend < ActiveRecord::Base
 
   after_save :send_request
   after_update :follow_friend
+
+  def unique
+    if user == friend
+      errors.add(:user, "can't be the same")
+    end
+  end
 
   def create_notifications
     Notification.create(

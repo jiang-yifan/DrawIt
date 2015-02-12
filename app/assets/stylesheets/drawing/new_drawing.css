@@ -1,4 +1,30 @@
-.new-drawing-preview{
-  max-height: 200px;
-  max-width: 200px;
+.new-drawing-preview-wrapper{
+  height: 550px;
+  width: 650px;
+  float: left;
+  position: relative;
+  cursor: pointer;
+}
+
+.new-drawing-preview-wrapper:hover .pick{
+  display: block;
+}
+
+.pick{
+  position: absolute;
+  top: 40px;
+  left: 230px;
+  font-size: 150%;
+}
+
+.new-drawing-right{
+  float: left;
+}
+
+.submit-drawing{
+  position: absolute;
+  font-size: 100%;
+  bottom: 20px;
+  right: 40px;
+  border-radius: 10px;
 }

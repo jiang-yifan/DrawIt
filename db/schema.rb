@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150210001703) do
+ActiveRecord::Schema.define(version: 20150212200620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,14 +38,12 @@ ActiveRecord::Schema.define(version: 20150210001703) do
 
   add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id", using: :btree
 
-  create_table "drawing_tables", force: :cascade do |t|
-  end
-
   create_table "drawings", force: :cascade do |t|
-    t.integer  "user_id",    null: false
-    t.string   "file_url",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id",     null: false
+    t.string   "file_url",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "description"
   end
 
   add_index "drawings", ["user_id"], name: "index_drawings_on_user_id", using: :btree
@@ -139,9 +137,6 @@ ActiveRecord::Schema.define(version: 20150210001703) do
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
-  create_table "session_tables", force: :cascade do |t|
-  end
-
   create_table "sessions", force: :cascade do |t|
     t.string   "token",      null: false
     t.integer  "user_id"
@@ -180,23 +175,15 @@ ActiveRecord::Schema.define(version: 20150210001703) do
   add_index "user_favorite_drawings", ["user_id"], name: "index_user_favorite_drawings_on_user_id", using: :btree
 
   create_table "user_friends", force: :cascade do |t|
-    t.integer  "friend_id",                      null: false
     t.integer  "user_id",                        null: false
+    t.integer  "friend_id",                      null: false
+    t.string   "status",     default: "pending", null: false
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
-    t.string   "status",     default: "pending", null: false
   end
 
   add_index "user_friends", ["friend_id"], name: "index_user_friends_on_friend_id", using: :btree
   add_index "user_friends", ["user_id"], name: "index_user_friends_on_user_id", using: :btree
-
-  create_table "user_tables", force: :cascade do |t|
-  end
-
-  create_table "userfriends", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false

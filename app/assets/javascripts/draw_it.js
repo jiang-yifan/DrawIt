@@ -15,7 +15,7 @@ window.DrawIt = {
   },
 
   initializeRouter: function (id) {
-    new DrawIt.Routers.Router({
+    window.myRouter = new DrawIt.Routers.Router({
       $rootEl: $('#content'),
       $header: $('#header'),
       $cover: $('#cover'),

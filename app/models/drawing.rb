@@ -4,6 +4,9 @@ class Drawing < ActiveRecord::Base
   include HasHearts
   include UpdatesActivity
   include TopDrawings
+
+  attr_accessor :tag_names
+
   validates :user, :file_url, presence: true
   validates :file_url, uniqueness: true
   has_many(
@@ -16,4 +19,11 @@ class Drawing < ActiveRecord::Base
   has_many :portfolios, through: :portfolio_drawings
 
   belongs_to :user
+
+  def make_tags
+    tag_names.each do |tag_name|
+      tag = Tag.find_or_create(tag_name)
+      taggings.create(tag_id: tag.id)
+    end
+  end
 end

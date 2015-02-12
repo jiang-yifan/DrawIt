@@ -6,8 +6,6 @@ DrawIt.Views.DrawingThumbnail = Backbone.CompositeView.extend({
     "mouseleave .drawing-thumbnail": "removeOptions",
     "click .drawing-thumbnail": "showDrawing"
   },
-  initialize: function () {
-  },
 
   showOptions: function (event) {
     this.drawingOverlayView = new DrawIt.Views.DrawingOverlay({
@@ -34,13 +32,7 @@ DrawIt.Views.DrawingThumbnail = Backbone.CompositeView.extend({
     });
     $("#main").append(this.modalView.render().$el);
     this.modalView.onRender();
-    // this.addSubview(".modal-container", this.modalView);
-    // this.listenTo(this.modalView, "closeModal", this.unShowDrawing);
   },
-
-  // unShowDrawing: function () {
-    // this.removeSubview('.modal-container', this.modalView)
-  // },
 
   render: function () {
     var content = this.template({drawing: this.model})

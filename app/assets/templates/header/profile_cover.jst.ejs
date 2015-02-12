@@ -4,4 +4,12 @@
       <img class='profile-avatar-image'
         src="<%= profile.escape('avatar_url')%>"></a>
     </div>
+
+    <% if(!profile.get('is_user')){ %>
+      <% if(!profile.get('is_friend')) { %>
+        <button class="cover-button add-friend">Add Friend!</button>
+      <% } else { %>
+        <button class="cover-button remove-friend">Remove Friend</button>
+      <% } %>
+    <% } %>
 </div>

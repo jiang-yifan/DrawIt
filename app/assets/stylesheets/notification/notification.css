@@ -5,13 +5,22 @@
   padding: 2px;
 }
 
+.clicked{
+  background-color: #107573;
+}
+
 .notification-wrapper{
-  background: #F7F7F7;
   cursor: default;
   border-top: 1px solid grey;
   border-left: 1px solid grey;
   border-right: 1px solid grey;
   box-shadow: 2px 2px 10px 1px #818182;
+}
+
+.no-notification{
+  border-left:1px solid grey;
+  border-right:1px solid grey;
+  text:center;
 }
 
 .notification-content{
@@ -22,14 +31,14 @@
 
 .notification-title{
   cursor: default;
-  background: #F7F7F7;
-  border-top: 1px solid grey;
-  border-left: 1px solid grey;
-  border-right: 1px solid grey;
+  border: 1px solid grey;
+  border-radius: 4px 4px 0 0;
 }
 
 .notifications-wrapper{
   z-index: 1;
+  background: #F7F7F7;
+  box-shadow: 2px 2px 5px lightgrey;
   position: absolute;
   right: -0px;
   top: 28px;

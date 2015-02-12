@@ -17,18 +17,18 @@
   width: 200px;
   float: left;
   padding-top: 11px;
-  padding-left: 10px;
+  padding-left: 15px;
 }
 
 .sign-out{
-  margin-top: 10px;
+  margin-top: 11px;
   float: right;
   border: 1px;
   border-radius: 5px;
-  background: #8ADEDC;
+  background: #19D3CF;
   overflow: hidden;
   margin-left: 5px;
-  box-shadow: 1px 1px 1px 1px #30706F;
+  box-shadow: 1px 1px 1px 1px #0A5452;
 }
 
 .sign-out:hover{
@@ -38,7 +38,7 @@
 .home-nav-link{
   float: right;
   height: 100%;
-  border-left: 1px solid grey;
+  border-left: 1px solid #B3B3B3;
   position: relative;
   margin-top: 13px;
   padding: 0 5px;

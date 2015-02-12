@@ -1,0 +1,25 @@
+.avatar-drawing-left{
+  width: 50px;
+  height: 50px;
+  float: left;
+  cursor: pointer;
+  border: 1px;
+  border-radius: 3px;
+  overflow: hidden
+}
+
+.avatar-drawing-right{
+  padding-left: 5px;
+  padding-top: 15px;
+  float: left;
+}
+
+.avatar-drawing-right strong{
+  font-size: 100%;
+}
+
+.profile-avatar-image{
+  width: 97%;
+  height: 97%;
+  padding: 2px;
+}

@@ -30,9 +30,8 @@ DrawIt.Views.HomePageHeader = Backbone.CompositeView.extend({
   },
 
   initiateSearchView: function () {
-    var searchView = new DrawIt.Views.HomePageSearch();
-    this.addSubview(".search-container", searchView)
-    $(":not(.search)").click(searchView.unShow);
+    this.searchView = new DrawIt.Views.HomePageSearch();
+    this.addSubview(".search-container", this.searchView);
   },
 
   refreshBadge: function () {
@@ -50,6 +49,7 @@ DrawIt.Views.HomePageHeader = Backbone.CompositeView.extend({
   },
 
   navigateFavorites: function () {
+    this.searchView.clear();
     Backbone.history.navigate(
       "#users/" + this.model.userId + "/drawings/favorites",
       {trigger: true}
@@ -58,6 +58,7 @@ DrawIt.Views.HomePageHeader = Backbone.CompositeView.extend({
 
   navigateProfile: function (event) {
     event.preventDefault();
+    this.searchView.clear();
     Backbone.history.navigate(
       "#users/" + this.model.userId,
       {trigger: true}
@@ -65,6 +66,7 @@ DrawIt.Views.HomePageHeader = Backbone.CompositeView.extend({
   },
 
   navigateRoot: function () {
+    this.searchView.clear();
     Backbone.history.navigate( "#",
       {trigger: true}
     );
@@ -72,6 +74,7 @@ DrawIt.Views.HomePageHeader = Backbone.CompositeView.extend({
 
   hideNotifications: function (event) {
     event.stopPropagation();
+    $('.notifications').removeClass("clicked");
     $(".notifications-wrapper").addClass("hidden");
   },
 
@@ -88,14 +91,20 @@ DrawIt.Views.HomePageHeader = Backbone.CompositeView.extend({
   showNotifications: function (event) {
     event.preventDefault();
     event.stopPropagation();
+    this.searchView.unShow();
     if (!$(".notifications-wrapper").hasClass("hidden")) {
-      $(".notifications-wrapper").addClass("hidden");
+      this.hideNotifications(event);
     } else {
+      $('.notifications').addClass("clicked");
       $(".notifications-wrapper").removeClass("hidden");
       $('.notification-title').click(function (event) {
         event.stopPropagation();
       });
     }
+  },
+
+  onRender: function () {
+    $(":not(.search)").click(this.searchView.unShow);
   },
 
   render: function () {

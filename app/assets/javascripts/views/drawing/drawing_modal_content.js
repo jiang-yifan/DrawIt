@@ -3,8 +3,16 @@ DrawIt.Views.DrawingModalContent = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.addComentsView);
+    this.addAvatarView();
     this.addCommentsView();
     this.addTagsView();
+  },
+
+  addAvatarView: function () {
+    var drawingAvatarView = new DrawIt.Views.AvatarDrawing({
+      model: this.model.avatar()
+    });
+    this.addSubview(".drawing-avatar", drawingAvatarView);
   },
 
   addCommentsView: function () {

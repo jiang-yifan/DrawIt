@@ -1,14 +1,15 @@
-<div class=drawing-show-top>
+
   <div class='drawing-show-left'>
     <img src="<%=drawing.escape('file_url')%>"/>
   </div>
 
   <div class="drawing-show-right">
-    <div class="description"></div>
-    <div class="hearts"></div>
+    <div class="drawing-avatar"></div>
+    <div class="hearts">
+      hearts: <%= drawing.escape('hearts_count') %>
+    </div>
+    <div class="description"><%= drawing.escape('description') %></div>
     <div class="tags"></div>
+  <div class="drawing-show-bottom">
   </div>
-</div>
-
-<div class="drawing-show-bottom">
-</div>
+  </div>

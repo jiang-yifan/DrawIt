@@ -6,6 +6,7 @@ class Api::DrawingsController < ApplicationController
   def create
     @drawing = current_user.drawings.new(drawing_params)
     if @drawing.save
+      @drawing.make_tags
       render json: @drawing
     else
       render json: @drawing.errors.full_messages, status: 422
@@ -18,6 +19,6 @@ class Api::DrawingsController < ApplicationController
 
   private
   def drawing_params
-    params.require(:drawing).permit(:file_url)
+    params.require(:drawing).permit(:file_url, tag_names: [])
   end
 end

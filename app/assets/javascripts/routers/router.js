@@ -37,6 +37,7 @@ DrawIt.Routers.Router = Backbone.Router.extend({
       model: this.userProfile
     });
     this.$header.html(this.homeHeader.render().$el);
+    this.homeHeader.onRender();
   },
 
   initiateUser: function () {

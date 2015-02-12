@@ -1,26 +1,24 @@
-.drawing-show-top{
-  width: 600px;
-}
-
 .drawing-show-left{
-  width: 400px;
+  height: 550px;
+  width: 650px;
   float: left;
 }
 
-.drawing-show-left img{
-  width: 100%;
-}
-
 .drawing-show-right{
-  width: 180px;
+  width: 210px;
+  margin-top: 20px;
+  margin-left: 20px;
   overflow: scroll;
   padding-left:10px;
   float:left;
 }
 
+.description{
+  height: 10px;
+}
+
+
 .drawing-show-bottom{
-  width: 600px;
-  height: 100px;
   padding-top: 5px;
-  overflow: scroll;
+  overflow-y: scroll;
 }

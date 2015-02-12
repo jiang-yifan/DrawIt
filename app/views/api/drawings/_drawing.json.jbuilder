@@ -1,7 +1,13 @@
 json.extract!(
   drawing,
-  :id, :file_url
+  :id, :file_url, :description
 )
+
+json.avatar do
+  json.user_id drawing.user.id
+  json.username drawing.user.username
+  json.avatar_url drawing.user.profile.avatar_url
+end
 
 if show_comments
   json.comments do

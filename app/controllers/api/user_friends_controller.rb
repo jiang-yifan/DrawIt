@@ -4,9 +4,14 @@ class Api::UserFriendsController < ApplicationController
   end
 
   def create
-    @friend = current_user.user_friended.new(
+    @user_friend = current_user.friended_users.new(
       user_friend_params
     )
+    if @user_friend.save
+      render json: @user_friend
+    else
+      render json: @user_friend.errors.full_messages
+    end
   end
 
   def delete
@@ -15,6 +20,6 @@ class Api::UserFriendsController < ApplicationController
 
   private
   def user_friend_params
-    params.require(:user_friended).permit(:friend_id)
+    params.require(:user_friend).permit(:friend_id)
   end
 end

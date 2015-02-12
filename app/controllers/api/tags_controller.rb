@@ -2,8 +2,7 @@ class Api::TagsController < ApplicationController
 
   def create
     tag_name = params[:tag][:tag_name]
-    @tag = Tag.find_by(tag_name: tag_name)
-    @tag = Tag.create(tag_name: tag_name) unless @tag
+    @tag = Tag.find_or_create(tag_name)
     params = tagging_params.merge({tag_id: @tag.id})
     @tagging = Tagging.new(params)
     if @tagging.save

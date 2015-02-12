@@ -1,5 +1,6 @@
 DrawIt.Views.NotificationsList = Backbone.CompositeView.extend({
   template: JST['notification/notifications_list'],
+  className: "notifications-main",
 
   initialize: function () {
     this.listenTo(this.collection, "add", this.addNotification);
@@ -11,6 +12,7 @@ DrawIt.Views.NotificationsList = Backbone.CompositeView.extend({
   },
 
   addNotification: function (notification) {
+    $('no-notification').addClass("hidden");
     var notificationShowView = new DrawIt.Views.NotificationShow({
       model: notification
     });

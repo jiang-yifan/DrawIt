@@ -2,7 +2,7 @@ DrawIt.Views.NewDrawingModalContent = Backbone.CompositeView.extend({
   template: JST['drawing/new_drawing'],
   tagName: "form",
   events:{
-    "click .pick": "pickDrawing",
+    "click .new-drawing-preview-wrapper": "pickDrawing",
     "click .submit-drawing": "createDrawing"
   },
 
@@ -41,31 +41,40 @@ DrawIt.Views.NewDrawingModalContent = Backbone.CompositeView.extend({
   uploadedDrawing: function (file) {
     this.file = file;
     this.$(".new-drawing-preview").attr("src", file.url);
+    this.$(".pick").addClass("hidden");
   },
 
   createDrawing: function (event) {
     event.preventDefault();
+    $button = $(event.currentTarget);
+    $button.prop("disabled", "true")
     var data = $(event.delegateTarget).serializeJSON();
     if(!data.drawing){
       data.drawing = {};
     }
     this.newTags.each(this.addNewTag.bind(this));
-    if(data.drawing.file){
+    if(data.drawing.file_url){
       data.drawing.file_url = this.file.url;
-      data.drawing.tags = this.tagsInfo;
+      data.drawing.tag_names = this.tagsInfo;
+      debugger
       var drawing = new DrawIt.Models.Drawing();
       var view = this;
       drawing.save(data,{
-        success: function () {
-          view.savedDrawing();
+        success: function (drawing) {
+          view.savedDrawing(drawing);
+          $button.prop("disabled", "false");
+        },
+
+        error: function () {
+          $button.prop("disabled", "false")
         }
       });
     } else {
-      debugger
+      $button.prop("disabled", "false")
     }
   },
 
-  savedDrawing: function () {
+  savedDrawing: function (drawing) {
     this.collection.add(drawing);
     Backbone.history.navigate(
       "#users/" + this.userId +"/drawings",

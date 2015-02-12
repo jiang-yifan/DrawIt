@@ -19,6 +19,9 @@
    display: block;
    clear: both;
  }
+form{
+  cursor: default;
+}
 
  img{
    width: 100%;
@@ -31,6 +34,7 @@
  #content{
    width: 900px;
    margin: 0 auto;
+   margin-top: 10px;
  }
 
  body{

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resource :session
+  resource :session, only:[:new, :create, :destroy]
   namespace :api, defaults:{format: :json} do
 
     resources :users, only: [:update, :destroy, :show] do
@@ -25,10 +25,10 @@ Rails.application.routes.draw do
     resources :drawings, except: [:index]
     resources :portfolios, except: [:index]
     resources :favorite_drawings, except: [:index]
-    resources :user_friends, only: [:create, :delete]
-    resources :comments, only: [:create, :delete, :update]
-    resources :tags,  only: [:create, :delete]
-    resources :hearts, only: [:create, :delete]
+    resources :user_friends, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy, :update]
+    resources :tags,  only: [:create, :destroy]
+    resources :hearts, only: [:create, :destroy]
     resources :searches, only: [:index]
   end
 end

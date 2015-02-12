@@ -6,9 +6,14 @@ class SessionsController < ApplicationController
     );
     if @user
       log_in! @user
-      redirect_to root_url
+      render json: {redirect: root_url}
     else
-      render :new
+      render json: ["incorrect password"], status: 422
     end
+  end
+
+  def destroy
+    log_out!
+    render json: {redirect: new_session_url}
   end
 end

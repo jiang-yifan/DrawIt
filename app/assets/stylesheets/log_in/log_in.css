@@ -1,0 +1,57 @@
+.log-in-form{
+  float: right;
+  height: 100%;
+  position: relative;
+  margin-top: 8px;
+  padding: 0 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.form-button{
+  margin-top: 16px;
+}
+
+.log-in-title{
+  font-family: 'Pacifico', cursive;
+  font-size: 240%;
+  float: left;
+  cursor: default;
+  color: white;
+}
+
+.log-in-container{
+  height: 60px;
+  background: #108784;
+  overflow: hidden;
+}
+
+.log-in-wrapper{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.log-in-content{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+#myCanvas{
+  margin-top: 50px;
+}
+
+input{
+  border: 1px solid grey;
+  height: 15px;
+  border-radius: 5px;
+}
+
+.input-field{
+  float:left;
+  width: 140px;
+  cursor: default;
+}
+
+.input-field label{
+  font-size: 70%;
+}

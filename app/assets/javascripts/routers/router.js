@@ -21,16 +21,14 @@ DrawIt.Routers.Router = Backbone.Router.extend({
   },
 
   createCover: function (id) {
-    if(!(this.profile && this.profile.id == id)){
-      this.profile = new DrawIt.Models.Profile({userId: id});
-      this.profile.fetch();
-      this.profileHeader && this.profileHeader.remove();
-      this.profileHeader = new DrawIt.Views.ProfileHeader({
-        model: this.profile,
-        drawings: this.drawings
-      });
-      this.$cover.html(this.profileHeader.render().$el);
-    }
+    this.profile = new DrawIt.Models.Profile({userId: id});
+    this.profile.fetch();
+    this.profileHeader && this.profileHeader.remove();
+    this.profileHeader = new DrawIt.Views.ProfileHeader({
+      model: this.profile,
+      drawings: this.userDrawings
+    });
+    this.$cover.html(this.profileHeader.render().$el);
   },
 
   createHeader: function () {
@@ -45,6 +43,9 @@ DrawIt.Routers.Router = Backbone.Router.extend({
       id: this.currentUserId
     });
     this.userProfile = new DrawIt.Models.Profile({
+      userId: this.currentUserId
+    });
+    this.userDrawings = new DrawIt.Collections.Drawings([],{
       userId: this.currentUserId
     });
   },
@@ -129,9 +130,9 @@ DrawIt.Routers.Router = Backbone.Router.extend({
 
   newPortfolio: function () {
     this.createCover(this.currentUserId);
-    this.userDrawings = new DrawIt.Collections.Drawings([], {
-      userId: this.currentUserId
-    });
+    // this.userDrawings = new DrawIt.Collections.Drawings([], {
+    //   userId: this.currentUserId
+    // });
     var newPortfolioView = new DrawIt.Views.NewPortfolio({
       collection: this.userDrawings
     });

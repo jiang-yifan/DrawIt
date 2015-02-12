@@ -4,7 +4,7 @@ DrawIt.Views.DrawingsList = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.collection, "add", this.addDrawing);
     this.addDrawings();
-    $(".title").text("Your Drawings")
+    $(".title").text("Drawings")
   },
 
   addDrawings: function () {

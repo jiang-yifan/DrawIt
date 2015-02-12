@@ -1,6 +1,6 @@
 class Api::SearchesController < ApplicationController
   def index
-    search = "%" + params[:search] + "%"
-    @users = User.where("username Like ?", search)
+    search = "%" + params[:search].upcase + "%"
+    @users = User.where("upper(username) Like ?", search)
   end
 end

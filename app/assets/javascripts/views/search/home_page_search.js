@@ -36,6 +36,7 @@ DrawIt.Views.HomePageSearch = Backbone.CompositeView.extend({
   },
 
   unShow: function () {
+    debugger
     $('.search-results').addClass("hidden")
   },
 

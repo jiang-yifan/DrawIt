@@ -14,8 +14,23 @@
 .search-container{
   width: 200px;
   float: left;
-  padding-top: 12px;
+  padding-top: 11px;
   padding-left: 10px;
+}
+
+.sign-out{
+  margin-top: 10px;
+  float: right;
+  border: 1px;
+  border-radius: 5px;
+  background: #8ADEDC;
+  overflow: hidden;
+  margin-left: 5px;
+  box-shadow: 1px 1px 1px 1px #30706F;
+}
+
+.sign-out:hover{
+  box-shadow: 1px 1px 4px 3px;
 }
 
 .home-nav-link{
@@ -27,6 +42,10 @@
   padding: 0 5px;
   cursor: pointer;
   color: white;
+}
+
+.home-nav-link:hover{
+  background: #107573;
 }
 
 .main-nav{

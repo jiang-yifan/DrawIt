@@ -1,12 +1,12 @@
 .profile-header{
   width: 900px;
   margin: 0 auto;
+  border: 1px solid lightgrey;
+  border-radius: 0 0 2px 2px;
+  background: white;
+  box-sizing: border-box
 }
 
-.title{
-  float:left;
-  /*font: 32px;*/
-}
 
 .header-button{
   float:right;
@@ -15,10 +15,12 @@
 
 .profile-nav-link{
   padding: 10px;
-  color: blue;
+  color: #3691AD;
   cursor: pointer;
-  border: 1px solid grey;
+  border-right: 1px solid lightgrey;
   float: left;
+  font-size: 95%;
+  font-weight: bold;
 }
 
 button{
@@ -26,6 +28,6 @@ button{
 }
 
 .profile-nav{
-  padding-left: 300px;
-  border: 1px solid grey;
+  margin-left: 240px;
+  border-left: 1px solid lightgrey;
 }

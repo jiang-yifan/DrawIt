@@ -6,7 +6,8 @@ DrawIt.Views.HomePageHeader = Backbone.CompositeView.extend({
     "click .site-title": 'navigateRoot',
     "click .favorites": 'navigateFavorites',
     'click .notifications': "showNotifications",
-    "click": "hideNotifications"
+    "click": "hideNotifications",
+    'click .sign-out': 'signOut'
   },
 
   initialize: function () {
@@ -70,6 +71,16 @@ DrawIt.Views.HomePageHeader = Backbone.CompositeView.extend({
   hideNotifications: function (event) {
     event.stopPropagation();
     $(".notifications-wrapper").addClass("hidden");
+  },
+
+  signOut: function (event) {
+    $.ajax({
+      url: "/session",
+      method:"delete",
+      success: function (data) {
+        window.location.href = data.redirect;
+      }
+    });
   },
 
   showNotifications: function (event) {

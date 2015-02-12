@@ -1,22 +1,28 @@
-<form  action="<%=session_url%>" method="post">
-  <input type="HIDDEN" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label for="">Username
-    <input type="text" name="user[username]" value="">
-  </label>
-  <label >Password:
-    <input type="password" name="user[password]" value="">
-  </label>
-  <input type="submit" name="" value="Log In">
-</form>
+<div class="log-in-container">
+  <div class="log-in-wrapper">
+      <span class="log-in-title">DrawIt</span>
 
-<canvas id="myCanvas" width="578" height="400"></canvas>
+
+      <form class="log-in-form">
+
+      </form>
+  </div>
+</div>
+
+
+<div class='log-in-content'>
+  <canvas id="myCanvas" width="450" height="350"></canvas>
+</div>
+
+<div class='sign-up-container'>
+  <form class="sign-up">
+
+  </form>
+</div>
+
 
 <script type="text/javascript">
-  var c=document.getElementById("myCanvas");
-  var ctx=c.getContext("2d");
-  var img = new Image();
-  img.src = "https://www.filepicker.io/api/file/Cd6OPvPsTjataLgrn1ne";
-  img.onload = function () {
-    ctx.drawImage(img,10,10);
-  }
+  var c = document.getElementById("myCanvas");
+  var context = c.getContext("2d");
+  LogIn.initialize(context);
 </script>

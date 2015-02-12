@@ -1,9 +1,16 @@
 DrawIt.Views.SearchShow = Backbone.View.extend({
   template: JST['search/search_show'],
-  className: "search-result-wrapper group",
 
   events:{
     'click .search-result-wrapper': 'navigate'
+  },
+
+  navigate: function (event) {
+    event.stopPropagation();
+    Backbone.history.navigate(
+      "users/" + this.model.get("user_id"),
+      {trigger:true}
+    );
   },
 
   render: function () {

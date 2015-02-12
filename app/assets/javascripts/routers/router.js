@@ -32,6 +32,7 @@ DrawIt.Routers.Router = Backbone.Router.extend({
   },
 
   createHeader: function () {
+    this.userProfile.fetch();
     this.homeHeader = new DrawIt.Views.HomePageHeader({
       model: this.userProfile
     });

@@ -6,7 +6,8 @@ DrawIt.Views.SearchShow = Backbone.View.extend({
   },
 
   navigate: function (event) {
-    event.stopPropagation();
+    $(".search-results").addClass("hidden");
+    $(".search").val("");
     Backbone.history.navigate(
       "users/" + this.model.get("user_id"),
       {trigger:true}

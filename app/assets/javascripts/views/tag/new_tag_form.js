@@ -2,7 +2,7 @@ DrawIt.Views.NewTagForm = Backbone.View.extend({
   template: JST["tag/new_tag_form"],
   tagName: "form",
   events:{
-    "click .submit": "createTag"
+    "click .submit-tag": "createTag"
   },
 
   createTag: function (event) {
@@ -13,7 +13,7 @@ DrawIt.Views.NewTagForm = Backbone.View.extend({
     data.tag.taggable_type =
         this.collection.commentedOn.constructor.modelType;
     var newTag = new DrawIt.Models.Tag(data)
-
+    $(".new-tag-text").val("");
     this.collection.create(newTag);
   },
 

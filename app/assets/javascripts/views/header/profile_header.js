@@ -3,9 +3,10 @@ DrawIt.Views.ProfileHeader = Backbone.CompositeView.extend({
 
   events:{
     "click #new_drawing": "showNewDrawingForm",
+    "click #profile": "navigateProfile",
     "click #new_portfolio": "navigateNewPortfolio",
     "click #portfolios": "navigatePortfolios",
-    "click #your_drawings": "navigateDrawings",
+    "click #drawings": "navigateDrawings",
     "click #favorites": "navigateFavorites",
     "click #friends": "navigateFriends"
   },
@@ -54,6 +55,13 @@ DrawIt.Views.ProfileHeader = Backbone.CompositeView.extend({
   navigatePortfolios: function () {
     Backbone.history.navigate(
       "#users/"+ this.model.userId + "/portfolios",
+      {trigger: true}
+    );
+  },
+
+  navigateProfile: function () {
+    Backbone.history.navigate(
+      "#users/"+ this.model.userId,
       {trigger: true}
     );
   },

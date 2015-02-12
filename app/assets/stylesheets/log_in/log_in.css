@@ -14,10 +14,13 @@
 
 .log-in-title{
   font-family: 'Pacifico', cursive;
-  font-size: 240%;
+  font-weight: bold;
+  font-size: 350%;
+  margin-top: -16px;
   float: left;
   cursor: default;
   color: white;
+  text-shadow: 2px 2px 2px black;
 }
 
 .log-in-container{
@@ -53,5 +56,6 @@ input{
 }
 
 .input-field label{
-  font-size: 70%;
+  font-weight: bold;
+  font-size: 75%;
 }

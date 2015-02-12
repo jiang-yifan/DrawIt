@@ -5,9 +5,11 @@
     </div>
     <button class="sign-out">Sign Out</button>
     <a class="home-nav-link notifications">Notifications
-      <strong class="badge"></strong>
+      <strong class="badge">0</strong>
     <div class="notifications-wrapper hidden"></div>
     </a>
     <a class="home-nav-link favorites">Favorites</a>
-    <a class="home-nav-link profile">Profile</a>
+    <a class="home-nav-link profile">
+      <img class="nav-avatar" src="<%= profile.escape('avatar_url') %>"/>
+    Profile</a>
 </div>

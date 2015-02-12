@@ -5,10 +5,12 @@
 
 .site-title{
   font-size: 180%;
+  font-family: "Pacifico", cursive;
+  margin-top: -7px;
   float: left;
-  padding-top: 7px;
   cursor: pointer;
   color: white;
+  text-shadow: 1px 1px 1px black;
 }
 
 .search-container{
@@ -38,7 +40,7 @@
   height: 100%;
   border-left: 1px solid grey;
   position: relative;
-  margin-top: 12px;
+  margin-top: 13px;
   padding: 0 5px;
   cursor: pointer;
   color: white;
@@ -51,4 +53,11 @@
 .main-nav{
   height: 40px;
   background: #108784;
+}
+
+.nav-avatar{
+  float:left;
+  width: 15px;
+  height: 15px;
+  padding-right: 3px;
 }

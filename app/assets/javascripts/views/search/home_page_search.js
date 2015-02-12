@@ -2,7 +2,6 @@ DrawIt.Views.HomePageSearch = Backbone.CompositeView.extend({
   template: JST["search/home_page_search"],
   events:{
     "keyup .search": "search",
-    "focusout .search": "unShow",
     "focus .search": "search"
   },
 
@@ -36,7 +35,6 @@ DrawIt.Views.HomePageSearch = Backbone.CompositeView.extend({
   },
 
   unShow: function () {
-    debugger
     $('.search-results').addClass("hidden")
   },
 

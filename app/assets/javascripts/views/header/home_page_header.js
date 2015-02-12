@@ -13,6 +13,7 @@ DrawIt.Views.HomePageHeader = Backbone.CompositeView.extend({
   initialize: function () {
     this.initiateNotifications();
     this.initiateSearchView();
+    this.listenTo(this.model, "sync", this.render)
   },
 
   initiateNotifications: function () {
@@ -31,6 +32,7 @@ DrawIt.Views.HomePageHeader = Backbone.CompositeView.extend({
   initiateSearchView: function () {
     var searchView = new DrawIt.Views.HomePageSearch();
     this.addSubview(".search-container", searchView)
+    $(":not(.search)").click(searchView.unShow);
   },
 
   refreshBadge: function () {
@@ -97,7 +99,8 @@ DrawIt.Views.HomePageHeader = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content = this.template();
+
+    var content = this.template({profile: this.model});
     this.$el.html(content);
     this.attachSubviews();
     return this;

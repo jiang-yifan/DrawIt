@@ -4,10 +4,13 @@
   </div>
 
   <div class="drawing-show-right">
-    <div class="drawing-avatar"></div>
-    <div class="hearts">
-      hearts: <%= drawing.escape('hearts_count') %>
+    <div class='activity-avatar-image'>
+      <img src="<%= drawing.escape('avatar_url') %>" alt="" />
     </div>
+    <strong class="activity-avatar-name"><%= drawing.escape('username') %></strong>
+    <!-- <div class="hearts"> -->
+      <!-- hearts: <%= drawing.escape('hearts_count') %> -->
+    <!-- </div> -->
     <div class="description"><%= drawing.escape('description') %></div>
     <div class="tags group"></div>
   <div class="drawing-show-bottom">

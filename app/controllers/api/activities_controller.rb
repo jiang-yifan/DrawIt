@@ -1,5 +1,6 @@
 class Api::ActivitiesController < ApplicationController
   def index
-    @activities = User.find(params[:user_id]).activities
+    @activities = (Activity.includes(user: :profile)
+      .where(user_id: params[:user_id]))
   end
 end

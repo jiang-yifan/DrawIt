@@ -45,16 +45,18 @@ DrawIt.Views.ActivityShow = Backbone.CompositeView.extend({
     var drawingThumbnailView = new DrawIt.Views.DrawingThumbnail({
       model: this.activity
     });
-
     this.addSubview(".activity-image-wrapper", drawingThumbnailView);
   },
 
   addPortfolio: function () {
-
+    var portfolioThumbnailView = new DrawIt.Views.PortfolioThumbnail({
+      model: this.activity
+    });
+    this.addSubview(".activity-image-wrapper", portfolioThumbnailView);
   },
 
   render: function () {
-    var content = this.template();
+    var content = this.template({activity: this.model});
     this.$el.html(content);
     return this;
   }

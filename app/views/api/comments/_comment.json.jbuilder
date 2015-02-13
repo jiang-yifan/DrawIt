@@ -3,10 +3,8 @@ json.extract!(
   :id, :body
 )
 
-json.avatar do
-  json.username comment.user.usename
-  json.avatar_url comment.user.profile.avatar_url
-end
+json.username comment.user.username
+json.avatar_url comment.user.profile.avatar_url
 
 if show_hearts
   json.hearts_count comment.hearts.count

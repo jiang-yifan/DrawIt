@@ -1,2 +1,8 @@
-<span>Hearts: <%= comment.escape("hearts_count")%></span>
-<span class="comment-body"><%= comment.escape("body") %></span>
+<div class="comment-avatar">
+  <img src="<%= comment.escape('avatar_url') %>" alt="" />
+</div>
+<div class="comment-content">
+  <strong><%= comment.escape('username') %></strong>
+  <span class="comment-body"><%= comment.escape("body") %></span>
+  <span class="comment-heart">Hearts: <%= comment.escape("hearts_count")%></span>
+</div>

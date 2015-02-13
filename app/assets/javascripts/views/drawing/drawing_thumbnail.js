@@ -30,7 +30,7 @@ DrawIt.Views.DrawingThumbnail = Backbone.CompositeView.extend({
     this.modalView = new DrawIt.Views.DrawingModalShow({
       model: this.model
     });
-    $("#main").append(this.modalView.render().$el);
+    $("body").append(this.modalView.render().$el);
     this.modalView.onRender();
   },
 

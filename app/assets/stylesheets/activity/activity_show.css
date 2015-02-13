@@ -1,4 +1,25 @@
 .activity-wrapper{
   width: 100%;
-  border-bottom: 1px solid lightgrey
+  border-bottom: 1px solid lightgrey;
+  margin-top: 10px;
+}
+
+.activity-image-wrapper .drawing-thumbnail-wrapper{
+  width: 350px;
+  padding-left: 50px;
+}
+
+.activity-avatar-image{
+  width: 40px;
+  height: 40px;
+  float: left;
+}
+
+.activity-avatar-name{
+  float: left;
+}
+
+.activity-avatar-wrapper{
+  margin-left: 20px;
+  margin-top: 20px;
 }

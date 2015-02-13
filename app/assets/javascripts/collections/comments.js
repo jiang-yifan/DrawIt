@@ -10,5 +10,5 @@ DrawIt.Collections.Comments = Backbone.Collection.extend({
     }else if(options.main_portfolio){
       this.commentedOn = options.main_portfolio;
     }
-  }
+  },
 });

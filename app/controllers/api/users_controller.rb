@@ -7,10 +7,21 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       log_in! @user
-      redirect_to root_url
+      render json: {redirect: root_url}
     else
       flash.now[:errors] = @user.errors.full_messages
-      render :edit
+      render json: ["error"], status: 422
+    end
+  end
+
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      log_in! @user
+      render json: {redirect: root_url}
+    else
+      flash.now[:errors] = @user.errors.full_messages
+      render json: ["error"], status: 422
     end
   end
 

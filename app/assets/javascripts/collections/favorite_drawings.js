@@ -7,5 +7,5 @@ DrawIt.Collections.FavoriteDrawings = Backbone.Collection.extend({
     this.userId = options.userId
   },
 
-  model: DrawIt.Models.Drawing
+  model: DrawIt.Models.Drawing,
 });

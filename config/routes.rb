@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'static_pages#root'
 
-  resources :users, only:[:new, :create] do
+  resources :users, only: [] do
     collection do
       get :get_current_user_id
     end
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resource :session, only:[:new, :create, :destroy]
   namespace :api, defaults:{format: :json} do
 
-    resources :users, only: [:update, :destroy, :show] do
+    resources :users, only: [:create, :update, :destroy, :show] do
       resource :main_portfolio, only:[:show, :update]
       resources :activities, only:[:index]
       resources :drawings, only: [:index]

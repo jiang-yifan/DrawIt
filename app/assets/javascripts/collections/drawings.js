@@ -9,5 +9,5 @@ DrawIt.Collections.Drawings = Backbone.Collection.extend({
     if(options.portfolio){
       this.portfolio = options.portfolio;
     }
-  }
+  },
 });

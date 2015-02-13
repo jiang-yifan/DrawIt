@@ -7,5 +7,5 @@ DrawIt.Collections.Friends = Backbone.Collection.extend({
     this.userId = options.userId
   },
 
-  model: DrawIt.Models.Friend
+  model: DrawIt.Models.Friend,
 });

@@ -1,7 +1,12 @@
 LogIn.renderViews = function () {
-  var logIn = new DrawIt.Views.LogIn({
+  this.logIn = new DrawIt.Views.LogIn({
     el: $('.log-in-form')
   });
-  logIn.render();
-  logIn.delegateEvents();
-}
+  this.logIn.render();
+  this.logIn.delegateEvents();
+  this.signUpView = new DrawIt.Views.SignUp({
+    el: $('.sign-up-container')
+  });
+  this.signUpView.render();
+  this.signUpView.delegateEvents();
+};

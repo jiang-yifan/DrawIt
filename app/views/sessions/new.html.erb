@@ -9,27 +9,25 @@
   </div>
 </div>
 
-<div class='gradient'>
-  <div class='log-in-content'>
-    <canvas id="myCanvas" width="450" height="350"></canvas>
-    <div class='sign-up-container'>
-      <form class="sign-up">
-        <div class='input-container'>
-          <strong class='sign-up-title'>Sign Up!</strong>
-          <input type="text" name="user[username]" value="" placeholder="Username">
-          <input type="password" name="user[password]" value="" placeholder="Password">
-          <input type="password" name="user[password_confirmation]" value="" placeholder="Password Confirmation">
-        </div>
-        <button class='new-user'>Sign Up</button>
-      </form>
-    </div>
-</div>
+<div class='log-in-content'>
+  <canvas id="myCanvas" width="450" height="350"></canvas>
+  <div class='sign-up-container'>
+    <form class="sign-up">
+      <div class='input-container'>
+        <strong class='sign-up-title'>Sign Up!</strong>
+        <input type="text" name="user[username]" value="" placeholder="Username">
+        <input type="password" name="user[password]" value="" placeholder="Password">
+        <input type="password" name="user[password_confirmation]" value="" placeholder="Password Confirmation">
+      </div>
+      <button class='new-user'>Sign Up</button>
+    </form>
+  </div>
 </div>
 
 <script type="text/javascript">
-  var c = document.getElementById("myCanvas");
-  var context = c.getContext("2d");
   $(document).ready(function(){
+    var c = document.getElementById("myCanvas");
+    var context = c.getContext("2d");
     LogIn.initialize(context);
   }
 </script>

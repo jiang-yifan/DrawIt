@@ -101,3 +101,21 @@
 [02/12/15 23:49:04 -0800 Yifans-MacBook-Pro.local (4428)] INFO : Installing Rails 4 view instrumentation
 [02/12/15 23:49:04 -0800 Yifans-MacBook-Pro.local (4428)] INFO : Installing Rails 4 Error instrumentation
 [02/12/15 23:49:04 -0800 Yifans-MacBook-Pro.local (4428)] INFO : Finished instrumentation
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] INFO : Starting the New Relic agent in "development" environment.
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] WARN : No configuration file found. Working directory = /Users/yifanjiang/Desktop/DrawIt
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] WARN : Looked in these locations (based on defaults): /Users/yifanjiang/Desktop/DrawIt/config/newrelic.yml, /Users/yifanjiang/Desktop/DrawIt/newrelic.yml, /Users/yifanjiang/Desktop/DrawIt/config/newrelic.yml, /Users/yifanjiang/Desktop/DrawIt/newrelic.yml, /Users/yifanjiang/.newrelic/newrelic.yml, /Users/yifanjiang/newrelic.yml
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] INFO : Environment: development
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] INFO : No known dispatcher detected.
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] INFO : Application: development
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] INFO : Installing ActiveJob instrumentation
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] INFO : Installing ActiveRecord 4 instrumentation
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] INFO : Installing Net instrumentation
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] INFO : Installing deferred Rack instrumentation
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] INFO : Installing Rack::Builder middleware instrumentation
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] INFO : Installing Rails 3+ middleware instrumentation
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] INFO : Installing Rails 4 Controller instrumentation
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] INFO : Installing Rails 4 view instrumentation
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] INFO : Installing Rails 4 Error instrumentation
+[02/12/15 23:55:24 -0800 Yifans-MacBook-Pro.local (4500)] INFO : Finished instrumentation

@@ -14,30 +14,36 @@
  *= require_self
  */
 
- .group:after {
-   content: "";
-   display: block;
-   clear: both;
- }
+.group:after {
+ content: "";
+ display: block;
+ clear: both;
+}
+
 form{
   cursor: default;
 }
 
- img{
-   width: 100%;
-   height: 100%;
- }
+img{
+ width: 100%;
+ height: 100%;
+}
 
- body{
-   margin: 0;
- }
+#content{
+ width: 900px;
+ margin: 0 auto;
+}
 
- #content{
-   width: 900px;
-   margin: 0 auto;
-   margin-top: 10px;
- }
+html{
+  height: 100%;
+}
+body {
+  background: #E8E8E8;
+  min-height: 100%;
+  position: relative;
+  margin: 0;
+}
 
- body{
-   background: #F2F2F2;
- }
+button{
+  cursor: pointer;
+}

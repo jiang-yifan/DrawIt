@@ -1,0 +1,17 @@
+.footer{
+  height: 20px;
+  margin-top: 20px;
+  background: #108784;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+.footer-container{
+  width: 900px;
+  margin: 0 auto;
+}
+
+.foot-seperation{
+  height: 40px;
+}

@@ -1,9 +1,15 @@
 <div class="friend-preview">
-  <img class="avatar" src="<%= friend.escape('avatar_url')%>"/>
-  <span class="friend-name"><%= friend.escape("username")%></span>
-  Mutual Friends: <%= friend.escape("mutual_friends_count")%>
+  <img class="avatar-friend" src="<% if(friend.escape('avatar_url') == ""){ %>
+    https://www.filepicker.io/api/file/9ESdUxBiQxO6bz3oBpo8
+  <% } else { %>
+    <%= friend.escape('avatar_url') %>
+  <% } %>"/>
+  <div class="friend-info">
+    <strong class="friend-name"><%= friend.escape("username")%></strong>
+    <span class="friend-mutual">Mutual Friends: <%= friend.escape("mutual_friends_count")%></span>
+    <button class="remove-friend">Remove Friend</button>
+  </div>
 </div>
 
 <div class="friend-actions">
-  <button class=".remove-friend">remove</button>
 </div>

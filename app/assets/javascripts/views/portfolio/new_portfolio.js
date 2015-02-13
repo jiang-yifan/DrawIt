@@ -2,12 +2,12 @@ DrawIt.Views.NewPortfolio = Backbone.CompositeView.extend({
   template: JST["portfolio/new_portfolio_form"],
   tagName: "form",
   events:{
-    "click .submit": "createPortfolio",
+    "click .submit-portfolio": "createPortfolio",
     "click .drawing-preview-wrapper": "setPortfolioImage"
   },
 
   initialize: function () {
-
+    $(".title").text("Create a Portfolio!");
     this.listenTo(this.collection, "add", this.addDrawingPreview);
     this.addDrawings();
     this.clicked = false;
@@ -32,7 +32,9 @@ DrawIt.Views.NewPortfolio = Backbone.CompositeView.extend({
     var newPortfolio = new DrawIt.Models.Portfolio();
     newPortfolio.save(data,{
       success: function(){
-        Backbone.history.navigate("#drawings", {trigger: true});
+        Backbone.history.navigate(
+          "#users/" + this.collection.userId + "/portfolios",
+         {trigger: true});
       }
     });
   },

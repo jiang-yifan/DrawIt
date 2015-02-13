@@ -5,7 +5,7 @@ DrawIt.Routers.Router = Backbone.Router.extend({
     "users/:user_id/drawings/favorites": "mainFavorites",
     "users/:user_id/portfolios": "mainPortfolios",
     "portfolios/new": "newPortfolio",
-    "portfolios/:id": "showPortfolio",
+    "users/:user_id/portfolios/:id": "showPortfolio",
     "users/:user_id/friends": "mainFriends",
     "users/:user_id": "mainProfile"
   },
@@ -20,13 +20,15 @@ DrawIt.Routers.Router = Backbone.Router.extend({
     this.createHeader();
   },
 
-  createCover: function (id) {
+  createCover: function (id, hide) {
+    this.profileHeader && this.profileHeader.remove();
     this.profile = new DrawIt.Models.Profile({userId: id});
     this.profile.fetch();
     this.profileHeader && this.profileHeader.remove();
     this.profileHeader = new DrawIt.Views.ProfileHeader({
       model: this.profile,
-      drawings: this.userDrawings
+      drawings: this.userDrawings,
+      hide: hide
     });
     this.$cover.html(this.profileHeader.render().$el);
   },
@@ -68,7 +70,7 @@ DrawIt.Routers.Router = Backbone.Router.extend({
     this.createCover(userId);
     var drawingsListView = new DrawIt.Views.DrawingsList({
       collection: this.drawings
-    });
+    }, true);
     this.drawings.fetch();
     this._swapView(drawingsListView);
   },
@@ -110,7 +112,7 @@ DrawIt.Routers.Router = Backbone.Router.extend({
   },
 
   mainProfile: function (userId) {
-    this.createCover(userId);
+    this.createCover(userId, true);
     this.mainPortfolio = new DrawIt.Models.MainPortfolio({userId: userId});
     this.activities = new DrawIt.Collections.Activities([],{userId: userId});
 
@@ -122,19 +124,18 @@ DrawIt.Routers.Router = Backbone.Router.extend({
     this._swapView(mainUserPageView);
   },
 
-  showPortfolio: function (id) {
+  showPortfolio: function (user_id, id) {
+    this.createCover(user_id);
     var portfolio = new DrawIt.Models.Portfolio({id: id})
     var portfolioShowView = new DrawIt.Views.PortfolioShow({
       model: portfolio
     });
+    portfolio.fetch();
     this._swapView(portfolioShowView);
   },
 
   newPortfolio: function () {
     this.createCover(this.currentUserId);
-    // this.userDrawings = new DrawIt.Collections.Drawings([], {
-    //   userId: this.currentUserId
-    // });
     var newPortfolioView = new DrawIt.Views.NewPortfolio({
       collection: this.userDrawings
     });

@@ -25,7 +25,10 @@ DrawIt.Views.PortfoliosList = Backbone.CompositeView.extend({
       model: portfolio
     })
     this.removeSubviews();
-    Backbone.history.navigate("#portfolios/" + id);
+    Backbone.history.navigate(
+      "#users/" + this.collection.userId +"/portfolios/" + id,
+      {trigger: true}
+    );
     this.addSubview(".portfolios-list", portfolioShowView);
   },
 

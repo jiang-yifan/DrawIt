@@ -1,9 +1,9 @@
 .drawing-thumbnail-wrapper{
   width: 210px;
-  padding-left: 10px;
-  padding-top: 10px;
+  padding-left: 20px;
+  padding-top: 20px;
   float: left;
-  /*position:relative;*/
+  position:relative;
 }
 
 .drawing-thumbnail{
@@ -18,12 +18,26 @@
 
 .drawing-thumbnail-overlay{
   display: none;
-  position: relative;
+  width: 210px;
+  height: 30px;
+  background: black;
+  opacity: .02;
+  position: absolute;
   bottom: 5px;
-  left: 15px;
+  left: 20px;
 }
 
 .blank-drawing{
   min-width: 200px;
+  min-height: 100px;
+}
+
+.drawings-list{
+  border: 1px solid lightgrey;
+  box-sizing: border-box;
+  background: #FAFAFA;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding-bottom: 20px;
   min-height: 100px;
 }

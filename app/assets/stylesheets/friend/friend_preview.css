@@ -1,4 +1,51 @@
-.avatar{
-  height: 30px;
-  width: 30px;
+.avatar-friend{
+  height: 148px;
+  width: 150px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  float: left;
+  cursor: pointer;
+}
+
+.friend-thumbnail-wrapper{
+  float: left;
+  height: 150px;
+  width: 420px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border: 1px solid lightgrey;
+  box-sizing: border-box;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.friends-list{
+  border: 1px solid lightgrey;
+  box-sizing: border-box;
+  background: #FAFAFA;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding-bottom: 20px;
+  min-height: 100px;
+}
+
+.friend-mutual{
+  display: block;
+  font-size: 80%;
+}
+
+.friend-name{
+  display: block;
+  font-size: 110%;
+  cursor: pointer;
+}
+
+.friend-info{
+  margin-top: 30px;
+  margin-left: 30px;
+  float: left;
+}
+
+.remove-friend{
+  margin-top: 10px;
 }

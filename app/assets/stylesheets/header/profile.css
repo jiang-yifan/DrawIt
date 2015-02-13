@@ -3,14 +3,29 @@
   margin: 0 auto;
   border: 1px solid lightgrey;
   border-radius: 0 0 2px 2px;
-  background: white;
+  background: #FAFAFA;
   box-sizing: border-box
 }
 
+.header{
+  width: 900px;
+  margin: 0 auto;
+  height: 60px;
+  margin-top: 20px;
+  background: #F2F2F2;
+  border: 1px solid lightgrey;
+  border-bottom: 0px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  box-sizing: border-box;
+}
 
 .header-button{
   float:right;
-  /*font: bold 32px*/
+}
+
+.header-content-container{
+  margin: 20px 30px;
 }
 
 .profile-nav-link{
@@ -23,11 +38,11 @@
   font-weight: bold;
 }
 
-button{
-  cursor: pointer;
-}
-
 .profile-nav{
   margin-left: 240px;
   border-left: 1px solid lightgrey;
+}
+
+.title{
+  font-size: 150%;
 }

@@ -1,19 +1,28 @@
 .main-user{
   width: 900px;
   margin: 0 auto;
+  box-sizing: border-box;
+  margin-top: 30px;
 }
 
 .profile-left{
-  width: 450px;
+  box-sizing: border-box;
+  width: 400px;
   height: 300px;
+  border: 1px solid lightgrey;
+  background: #FAFAFA;
   float: left;
-  background: teal;
+  border-radius: 5px;
 }
 
 .profile-right{
-  width: 400px;
-  height: 300px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 450px;
+  max-height: 1000px;
   margin-left: 50px;
   float: left;
-  background: lightblue;
+  border: 1px solid lightgrey;
+  background: #FAFAFA;
+  overflow-y: scroll;
 }

@@ -3,7 +3,7 @@ DrawIt.Views.PortfolioShow = Backbone.CompositeView.extend({
   className: "portfolio_show",
 
   initialize: function () {
-    this.listenTo(this.model, "sync", this.render)
+    this.listenTo(this.model, "sync", this.render);
     this.addDrawings();
     this.addComments();
   },
@@ -18,7 +18,7 @@ DrawIt.Views.PortfolioShow = Backbone.CompositeView.extend({
   addDrawings: function () {
     var drawingsListView = new DrawIt.Views.DrawingsList({
       collection: this.model.drawings()
-    });
+    }, false);
     this.addSubview(".portfolio-drawings", drawingsListView);
   },
 
@@ -26,7 +26,7 @@ DrawIt.Views.PortfolioShow = Backbone.CompositeView.extend({
     var content = this.template({portfolio: this.model});
     this.$el.html(content);
     this.attachSubviews();
-
+    $(".title").text(this.model.get('name'));
     return this;
   }
 

@@ -2,20 +2,26 @@ DrawIt.Views.FriendsList = Backbone.CompositeView.extend({
   template: JST["friend/friends_list"],
 
   initialize: function () {
-    this.listenTo(this.collection, "add", this.addFriend);
-    this.addFriends();// bug adding initializing user to collection triggers add
-    $(".title").text("Your Friends")
+    this.listenTo(this.collection, "add", this.addFriendView);
+    this.listenTo(this.collection, "remove", this.removeFriendView);
+    this.addFriendViews();
+    $(".title").text("Friends")
   },
 
-  addFriends: function () {
-    this.collection.each(this.addFriend.bind(this));
+  addFriendViews: function () {
+    this.collection.each(this.addFriendView.bind(this));
   },
 
-  addFriend: function (friend) {
+  addFriendView: function (friend) {
     var friendThumbnailView = new DrawIt.Views.FriendThumbnail({
-      model: friend
+      model: friend,
+      collection: this.collection
     });
     this.addSubview(".friends-list", friendThumbnailView);
+  },
+
+  removeFriendView: function (friend) {
+    this.removeSubviewByModel(friend);
   },
 
   render: function () {

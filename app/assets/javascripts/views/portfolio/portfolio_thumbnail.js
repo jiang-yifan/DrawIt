@@ -10,10 +10,6 @@ DrawIt.Views.PortfolioThumbnail = Backbone.View.extend({
   },
 
   triggerPortfolioShow: function () {
-    // Backbone.history.navigate(
-    //   "#portfolios/" + this.model.id,
-    //   {trigger: true}
-    // );
     this.trigger("clickedPortfolio", this.model.id);
   },
 

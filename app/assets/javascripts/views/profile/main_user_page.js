@@ -7,8 +7,7 @@ DrawIt.Views.MainUserPage = Backbone.CompositeView.extend({
     this.activities = options.activities;
     this.addMainPortfolio();
     this.addActivitiesList();
-
-    this.listenTo(this.activities, "add", this.addActivity);
+    $(".title").text("Profile");
   },
 
   addActivitiesList: function () {
@@ -17,16 +16,7 @@ DrawIt.Views.MainUserPage = Backbone.CompositeView.extend({
       collection: this.activities
     });
     this.addSubview('.profile-right', activitiesListView);
-    // this.activities.each(this.addActivity.bind(this));
   },
-
-  // addActivity: function (activity) {
-  //   var type = activity.activity_type
-  //   var id = activity.activity_id
-  //   if (type === "comment") {
-  //
-  //   }
-  // },
 
   addMainPortfolio: function () {
     this.mainPortfolio.fetch();

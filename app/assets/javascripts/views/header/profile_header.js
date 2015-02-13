@@ -14,6 +14,11 @@ DrawIt.Views.ProfileHeader = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.listenTo(this.model, "sync", this.synced);
     this.drawings = options.drawings;
+    if(options.hide){
+      this.hide = options.hide;
+    } else {
+      this.hide = false;
+    }
   },
 
   addCover: function () {
@@ -81,7 +86,8 @@ DrawIt.Views.ProfileHeader = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content = this.template({profile: this.model});
+    var temp = $(".title").text();
+    var content = this.template({profile: this.model, title: temp, hide: this.hide});
     this.$el.html(content);
 
     this.attachSubviews();

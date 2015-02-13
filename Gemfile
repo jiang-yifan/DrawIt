@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'newrelic_rpm'
 gem 'rails', '4.2.0'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'

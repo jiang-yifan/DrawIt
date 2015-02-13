@@ -1,10 +1,12 @@
 DrawIt.Views.DrawingsList = Backbone.CompositeView.extend({
   template: JST["drawing/drawings_list"],
 
-  initialize: function () {
+  initialize: function (options, title) {
     this.listenTo(this.collection, "add", this.addDrawing);
     this.addDrawings();
-    $(".title").text("Drawings")
+    if(title){
+      $(".title").text("Drawings")
+    }
   },
 
   addDrawings: function () {

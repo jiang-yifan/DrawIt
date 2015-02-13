@@ -1,0 +1,62 @@
+# Logfile created on 2015-02-12 13:32:12 -0800 by logger.rb/41954
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] INFO : Starting the New Relic agent in "development" environment.
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] WARN : No configuration file found. Working directory = /Users/yifanjiang/Desktop/DrawIt
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] WARN : Looked in these locations (based on defaults): /Users/yifanjiang/Desktop/DrawIt/config/newrelic.yml, /Users/yifanjiang/Desktop/DrawIt/newrelic.yml, /Users/yifanjiang/Desktop/DrawIt/config/newrelic.yml, /Users/yifanjiang/Desktop/DrawIt/newrelic.yml, /Users/yifanjiang/.newrelic/newrelic.yml, /Users/yifanjiang/newrelic.yml
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] INFO : Environment: development
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] INFO : No known dispatcher detected.
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] INFO : Application: development
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] INFO : Installing ActiveJob instrumentation
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] INFO : Installing ActiveRecord 4 instrumentation
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] INFO : Installing Net instrumentation
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] INFO : Installing deferred Rack instrumentation
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] INFO : Installing Rack::Builder middleware instrumentation
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] INFO : Installing Rails 3+ middleware instrumentation
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] INFO : Installing Rails 4 Controller instrumentation
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] INFO : Installing Rails 4 view instrumentation
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] INFO : Installing Rails 4 Error instrumentation
+[02/12/15 13:32:12 -0800 Yifans-MacBook-Pro.local (99713)] INFO : Finished instrumentation
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] INFO : Starting the New Relic agent in "development" environment.
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] WARN : No configuration file found. Working directory = /Users/yifanjiang/Desktop/DrawIt
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] WARN : Looked in these locations (based on defaults): /Users/yifanjiang/Desktop/DrawIt/config/newrelic.yml, /Users/yifanjiang/Desktop/DrawIt/newrelic.yml, /Users/yifanjiang/Desktop/DrawIt/config/newrelic.yml, /Users/yifanjiang/Desktop/DrawIt/newrelic.yml, /Users/yifanjiang/.newrelic/newrelic.yml, /Users/yifanjiang/newrelic.yml
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] INFO : Environment: development
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] INFO : Dispatcher: webrick
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] INFO : Application: development
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] INFO : Installing ActiveJob instrumentation
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] INFO : Installing ActiveRecord 4 instrumentation
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] INFO : Installing Net instrumentation
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] INFO : Installing deferred Rack instrumentation
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] INFO : Installing Rack::Builder middleware instrumentation
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] INFO : Installing Rails 3+ middleware instrumentation
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] INFO : Installing Rails 4 Controller instrumentation
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] INFO : Installing Rails 4 view instrumentation
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] INFO : Installing Rails 4 Error instrumentation
+[02/12/15 13:36:10 -0800 Yifans-MacBook-Pro.local (99789)] INFO : Finished instrumentation
+[02/12/15 13:36:11 -0800 Yifans-MacBook-Pro.local (99789)] INFO : Doing deferred dependency-detection before Rack startup
+[02/12/15 13:36:12 -0800 Yifans-MacBook-Pro.local (99789)] ERROR : Invalid license key, please contact support@newrelic.com
+[02/12/15 13:36:12 -0800 Yifans-MacBook-Pro.local (99789)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[02/12/15 14:24:14 -0800 Yifans-MacBook-Pro.local (99789)] INFO : Starting Agent shutdown
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] INFO : Starting the New Relic agent in "development" environment.
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] WARN : No configuration file found. Working directory = /Users/yifanjiang/Desktop/DrawIt
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] WARN : Looked in these locations (based on defaults): /Users/yifanjiang/Desktop/DrawIt/config/newrelic.yml, /Users/yifanjiang/Desktop/DrawIt/newrelic.yml, /Users/yifanjiang/Desktop/DrawIt/config/newrelic.yml, /Users/yifanjiang/Desktop/DrawIt/newrelic.yml, /Users/yifanjiang/.newrelic/newrelic.yml, /Users/yifanjiang/newrelic.yml
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] INFO : Environment: development
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] INFO : Dispatcher: webrick
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] INFO : Application: development
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] INFO : Installing ActiveJob instrumentation
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] INFO : Installing ActiveRecord 4 instrumentation
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] INFO : Installing Net instrumentation
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] INFO : Installing deferred Rack instrumentation
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] INFO : Installing Rack::Builder middleware instrumentation
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] INFO : Installing Rails 3+ middleware instrumentation
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] INFO : Installing Rails 4 Controller instrumentation
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] INFO : Installing Rails 4 view instrumentation
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] INFO : Installing Rails 4 Error instrumentation
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] INFO : Finished instrumentation
+[02/12/15 14:24:20 -0800 Yifans-MacBook-Pro.local (425)] INFO : Doing deferred dependency-detection before Rack startup
+[02/12/15 14:24:22 -0800 Yifans-MacBook-Pro.local (425)] ERROR : Invalid license key, please contact support@newrelic.com
+[02/12/15 14:24:22 -0800 Yifans-MacBook-Pro.local (425)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.

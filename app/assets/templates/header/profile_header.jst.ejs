@@ -12,11 +12,14 @@
     <span id="friends" class='profile-nav-link'>Friends</span>
   </div>
 </div>
-
-<% if(profile.get('is_user')){ %>
-  <div class="header group">
-    <span class="title"></span>
+<% if(!hide){ %>
+<div class="header group">
+  <div class="header-content-container">
+    <strong class="title"><%= title %></strong>
+  <% if(profile.get('is_user')){ %>
     <button id="new_portfolio" class="header-button">Create Portfolio</button>
     <button id="new_drawing" class="header-button">Add Drawing</button>
+  <% } %>
   </div>
+</div>
 <% } %>

@@ -8,3 +8,13 @@
 .portfolio-thumbnail{
   width:100%;
 }
+
+.portfolios-list{
+  border: 1px solid lightgrey;
+  box-sizing: border-box;
+  background: #FAFAFA;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding-bottom: 20px;
+  min-height: 100px;
+}

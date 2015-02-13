@@ -14,8 +14,16 @@ class Api::UserFriendsController < ApplicationController
     end
   end
 
-  def delete
-
+  def destroy
+    @user_friend = UserFriend.find_by(
+      user_id: current_user.id,
+      friend_id: params[:id]
+    )
+    if @user_friend.destroy
+      render json: @user_friend, status: 200
+    else
+      render json: @user_friend.errors.full_messages, status: 422
+    end
   end
 
   private

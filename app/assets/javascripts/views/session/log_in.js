@@ -12,7 +12,6 @@ DrawIt.Views.LogIn = Backbone.View.extend({
     var view = this;
     session.save(data,{
       success: function (data) {
-        view.remove();
         window.location.href = data.get('redirect');
       },
       error: function () {

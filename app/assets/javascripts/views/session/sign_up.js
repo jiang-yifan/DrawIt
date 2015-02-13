@@ -12,8 +12,6 @@ DrawIt.Views.SignUp = Backbone.View.extend({
     var view = this;
     user.save(data,{
       success: function (data) {
-        debugger
-        view.remove();
         window.location.href = data.get('redirect');
       },
       error: function () {

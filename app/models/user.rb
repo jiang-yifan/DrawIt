@@ -15,7 +15,8 @@ class User < ActiveRecord::Base
   has_many :portfolios, dependent: :destroy
   has_many :user_favorite_drawings, dependent: :destroy
   has_many :activities, dependent: :destroy
-
+  has_many :hearts, dependent: :destroy
+  
   has_many(
     :favorite_drawings,
     through: :user_favorite_drawings,

@@ -3,11 +3,21 @@ json.extract!(
   :id, :file_url, :description
 )
 
-json.avatar do
-  json.user_id drawing.user.id
-  json.username drawing.user.username
-  json.avatar_url drawing.user.profile.avatar_url
+if show_hearts
+  json.hearts_count drawing.hearts.count
+  json.partial! "api/hearts/user_hearted",
+    hearts: drawing.hearts
+
+  if current_user.favorite_drawing_ids.include?(drawing.id)
+    json.is_favorite true
+  else
+    json.is_favorite false
+  end
 end
+
+json.user_id drawing.user.id
+json.username drawing.user.username
+json.avatar_url drawing.user.profile.avatar_url
 
 if show_comments
   json.comments do
@@ -22,17 +32,5 @@ if show_comments
     json.array!(drawing.taggings) do |tagging|
       json.partial! 'api/tags/tagging', tagging: tagging
     end
-  end
-end
-
-if show_hearts
-  json.hearts_count drawing.hearts.count
-  json.partial! "api/hearts/user_hearted",
-    hearts: drawing.hearts
-
-  if current_user.favorite_drawing_ids.include?(drawing.id)
-    json.is_favorite true
-  else
-    json.is_favorite false
   end
 end

@@ -1,9 +1,10 @@
 .drawing-thumbnail-wrapper{
-  width: 210px;
-  padding-left: 20px;
-  padding-top: 20px;
+  width: 200px;
+  margin-left: 20px;
+  margin-top: 20px;
   float: left;
   position:relative;
+  overflow: hidden;
 }
 
 .drawing-thumbnail{
@@ -14,17 +15,6 @@
 
 .drawing-thumbnail:hover + .drawing-thumbnail-overlay{
   display: block;
-}
-
-.drawing-thumbnail-overlay{
-  display: none;
-  width: 210px;
-  height: 30px;
-  background: black;
-  opacity: .02;
-  position: absolute;
-  bottom: 5px;
-  left: 20px;
 }
 
 .blank-drawing{

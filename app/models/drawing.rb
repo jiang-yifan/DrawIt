@@ -21,9 +21,11 @@ class Drawing < ActiveRecord::Base
   belongs_to :user
 
   def make_tags
-    tag_names.each do |tag_name|
-      tag = Tag.find_or_create(tag_name)
-      taggings.create(tag_id: tag.id)
+    if tag_names
+      tag_names.each do |tag_name|
+        tag = Tag.find_or_create(tag_name)
+        taggings.create(tag_id: tag.id)
+      end
     end
   end
 end

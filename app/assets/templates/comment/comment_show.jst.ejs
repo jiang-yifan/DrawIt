@@ -1,8 +1,20 @@
 <div class="comment-avatar">
   <img src="<%= comment.escape('avatar_url') %>" alt="" />
 </div>
-<div class="comment-content">
-  <strong class="comment-username"><%= comment.escape('username') %>:</strong>
-  <span class="comment-body"><%= comment.escape("body") %></span>
-  <span class="comment-heart"> hearts: <%= comment.escape("hearts_count")%></span>
+
+<div class="comment-right">
+  <div class="comment-content">
+    <strong class="comment-username"><%= comment.escape('username') %>:</strong>
+    <span class="comment-body"><%= comment.escape("body") %></span>
+  </div>
+  <div class="comment-hearts">
+    <div class="comment-heart">
+      <% if(comment.escape("hearts") ==="true"){%>
+        <img src="https://www.filepicker.io/api/file/kFDmmEprS0fsEdhMtGVq" alt="" />
+      <% } else{ %>
+        <img src="https://www.filepicker.io/api/file/IhdpwKOeQBSKeJbNXs6W" alt="" />
+      <% } %>
+    </div>
+    <div class="comment-heart-count"><%= comment.escape("hearts_count")%></div>
+  </div>
 </div>

@@ -12,7 +12,7 @@ class UserFriend < ActiveRecord::Base
   )
 
   after_save :send_request
-  after_update :follow_friend
+  after_save :follow_friend
 
   def unique
     if user == friend
@@ -33,10 +33,8 @@ class UserFriend < ActiveRecord::Base
   end
 
   def follow_friend
-    if status == "approved"
-      UserFriend.create(user_id: friend_id, friend_id: user_id)
-      user.followed_users.create(followed_id: friend_id)
-      friend.followed_users.create(followed_id: user_id)
-    end
+    # UserFriend.create(user_id: friend_id, friend_id: user_id)
+    user.followed_users.create(followed_id: friend_id)
+    # friend.followed_users.create(followed_id: user_id)
   end
 end

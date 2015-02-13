@@ -47,30 +47,29 @@ DrawIt.Views.NewDrawingModalContent = Backbone.CompositeView.extend({
   createDrawing: function (event) {
     event.preventDefault();
     $button = $(event.currentTarget);
-    $button.prop("disabled", "true")
+    $button.prop("disabled", true);
     var data = $(event.delegateTarget).serializeJSON();
     if(!data.drawing){
       data.drawing = {};
     }
     this.newTags.each(this.addNewTag.bind(this));
-    if(data.drawing.file_url){
+    if(this.file.url){
       data.drawing.file_url = this.file.url;
       data.drawing.tag_names = this.tagsInfo;
-      debugger
       var drawing = new DrawIt.Models.Drawing();
       var view = this;
       drawing.save(data,{
         success: function (drawing) {
           view.savedDrawing(drawing);
-          $button.prop("disabled", "false");
+          $button.prop("disabled", false);
         },
 
         error: function () {
-          $button.prop("disabled", "false")
+          $button.prop("disabled", false)
         }
       });
     } else {
-      $button.prop("disabled", "false")
+      $button.prop("disabled", false)
     }
   },
 

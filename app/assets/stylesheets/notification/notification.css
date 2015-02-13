@@ -46,7 +46,7 @@
   max-height: 400px;
   color: black;
   border-bottom: 1px solid grey;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .hidden{

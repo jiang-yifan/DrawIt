@@ -1,9 +1,9 @@
 DrawIt.Views.DrawingThumbnail = Backbone.CompositeView.extend({
   template: JST["drawing/drawing_thumbnail"],
-  className: 'drawing-thumbnail-wrapper',
+  className: 'drawing-thumbnail-wrapper group',
   events:{
-    "mouseenter .drawing-thumbnail": "showOptions",
-    "mouseleave .drawing-thumbnail": "removeOptions",
+    "mouseenter": "showOptions",
+    "mouseleave": "removeOptions",
     "click .drawing-thumbnail": "showDrawing"
   },
 

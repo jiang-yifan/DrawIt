@@ -15,7 +15,7 @@
   background: #DFE6E8;
   cursor: pointer;
   border: 1px solid grey;
-  overflow: scroll;
+  overflow-y: scroll;
   border-radius: 8px;
   box-shadow: 2px 2px 10px 1px #818182;
 }

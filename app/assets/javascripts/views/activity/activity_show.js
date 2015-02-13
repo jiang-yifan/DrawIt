@@ -16,6 +16,7 @@ DrawIt.Views.ActivityShow = Backbone.CompositeView.extend({
   },
 
   synced: function () {
+    this.render()
     if(Object.keys(this.subviews()).length === 0){
       this.addCommentsView();
       this.addImage();
@@ -56,7 +57,7 @@ DrawIt.Views.ActivityShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content = this.template({activity: this.model});
+    var content = this.template({activity: this.activity});
     this.$el.html(content);
     return this;
   }

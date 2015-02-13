@@ -8,7 +8,7 @@
   width: 210px;
   margin-top: 20px;
   margin-left: 20px;
-  overflow: scroll;
+  overflow-y: scroll;
   padding-left:10px;
   float:left;
 }

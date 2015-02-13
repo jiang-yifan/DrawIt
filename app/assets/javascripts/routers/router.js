@@ -64,10 +64,14 @@ DrawIt.Routers.Router = Backbone.Router.extend({
   },
 
   mainDrawings: function (userId) {
-    this.drawings = new DrawIt.Collections.Drawings([], {
-      userId: userId
-    });
     this.createCover(userId);
+    if (userId == this.currentUserId) {
+      this.drawings = this.userDrawings;
+    } else {
+      this.drawings = new DrawIt.Collections.Drawings([], {
+        userId: userId
+      });
+    }
     var drawingsListView = new DrawIt.Views.DrawingsList({
       collection: this.drawings
     }, true);

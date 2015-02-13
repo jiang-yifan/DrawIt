@@ -1,6 +1,6 @@
 DrawIt.Views.MainPage = Backbone.CompositeView.extend({
   template: JST["home/main_page"],
-
+  className: "group",
   initialize: function () {
     this.addFeedView();
     this.addAvatar();

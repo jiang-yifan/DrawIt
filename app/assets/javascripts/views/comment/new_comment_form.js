@@ -7,6 +7,7 @@ DrawIt.Views.NewCommentForm = Backbone.View.extend({
 
   createComment: function (event) {
     event.preventDefault();
+    debugger
     $delegateTarget = $(event.delegateTarget);
     var data = $delegateTarget.serializeJSON();
     data.comment.commentable_type = (

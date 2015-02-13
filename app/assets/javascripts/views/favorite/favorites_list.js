@@ -1,5 +1,6 @@
 DrawIt.Views.FavoritesList = Backbone.CompositeView.extend({
   template: JST["favorite/favorites_list"],
+  className: "group",
 
   initialize: function () {
     this.listenTo(this.collection, "add", this.addDrawing);

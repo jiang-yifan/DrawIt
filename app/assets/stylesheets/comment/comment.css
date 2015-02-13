@@ -27,6 +27,7 @@
   margin-top: 10px;
   padding-bottom: 10px;
   padding-top: 5px;
+  padding-left: 20px;
 }
 .comment{
   margin-top: 5px;
@@ -37,7 +38,30 @@
 }
 
 .comments{
-  margin-left: 20px;
   max-height: 100px;
-  overflow: scroll;
+  overflow-y: scroll;
+}
+
+.comment-heart{
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  float: left;
+  cursor: pointer;
+}
+
+.comment-heart-count{
+  font-size: 80%;
+  line-height: 30px;
+  margin-left: 2px;
+  float: left;
+}
+
+.comment-right{
+  float: left;
+  width: 80%;
+}
+
+.comment-hearts{
+  float: left;
 }

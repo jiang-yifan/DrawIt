@@ -17,7 +17,6 @@ DrawIt.Views.DrawingsList = Backbone.CompositeView.extend({
     var drawingThumbnailView = new DrawIt.Views.DrawingThumbnail({
       model: drawing
     });
-
     this.addSubview(".drawings-list", drawingThumbnailView);
   },
 

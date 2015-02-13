@@ -1,7 +1,11 @@
 .activity-wrapper{
   width: 100%;
-  border-bottom: 1px solid lightgrey;
-  margin-top: 10px;
+  border: 1px solid lightgrey;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background: #FAFAFA;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .activity-image-wrapper .drawing-thumbnail-wrapper{
@@ -9,7 +13,10 @@
   padding-left: 50px;
 }
 
-.activity-image-wrapper .drawing-thumbnail-wrapper 
+.activity-image-wrapper .drawing-thumbnail-wrapper .drawing-thumbnail-overlay{
+  width: 350px;
+  left: 50px
+}
 
 .activity-avatar-image{
   width: 40px;
@@ -17,16 +24,13 @@
   float: left;
 }
 
-.activity-avatar-name{
-  float: left;
-}
-
 .activity-avatar-wrapper{
   margin-left: 20px;
-  margin-top: 20px;
+  padding-top: 20px;
 }
 .activity-avatar-name{
   margin-left: 10px;
   margin-top: 10px;
   color: blue;
+  float: left;
 }

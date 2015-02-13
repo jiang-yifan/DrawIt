@@ -1,12 +1,12 @@
 .main-left{
   width: 200px;
   float: left;
-  background: red;
+  margin-top: 20px;
 }
 
 .main-right{
-  width: 400px;
+  width: 680px;
   margin-left: 20px;
-  background: teal;
   float: left;
+  margin-top: 20px;
 }

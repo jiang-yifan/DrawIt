@@ -2,7 +2,7 @@
   <img src="<%= comment.escape('avatar_url') %>" alt="" />
 </div>
 <div class="comment-content">
-  <strong><%= comment.escape('username') %></strong>
+  <strong class="comment-username"><%= comment.escape('username') %>:</strong>
   <span class="comment-body"><%= comment.escape("body") %></span>
-  <span class="comment-heart">Hearts: <%= comment.escape("hearts_count")%></span>
+  <span class="comment-heart"> hearts: <%= comment.escape("hearts_count")%></span>
 </div>

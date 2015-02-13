@@ -76,7 +76,7 @@ DrawIt.Views.ProfileHeader = Backbone.CompositeView.extend({
       userId: this.model.userId,
       drawings: this.drawings
     });
-    $("#main").append(newDrawingForm.render().$el);
+    $("body").append(newDrawingForm.render().$el);
     newDrawingForm.onRender();
   },
 

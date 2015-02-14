@@ -5,23 +5,24 @@ DrawIt.Views.DrawingThumbnail = Backbone.CompositeView.extend({
     "mouseenter": "showOptions",
     "mouseleave": "removeOptions",
     "click .drawing-thumbnail": "showDrawing"
+    // "click .fav-button": "toggleFavorite"
   },
 
   showOptions: function (event) {
-    this.drawingOverlayView = new DrawIt.Views.DrawingOverlay({
-      model: this.model
-    });
-    this.addSubview(
-      ".drawing-thumbnail-overlay",
-      this.drawingOverlayView
-    );
+    this.$(".drawing-thumbnail-overlay").removeClass("hidden");
+    if(!this.drawingOverlayView){
+      this.drawingOverlayView = new DrawIt.Views.DrawingOverlay({
+        model: this.model
+      });
+      this.addSubview(
+        ".drawing-thumbnail-overlay",
+        this.drawingOverlayView
+      );
+    }
   },
 
   removeOptions: function () {
-    this.removeSubview(
-      ".drawing-thumbnail-overlay",
-      this.drawingOverlayView
-    );
+    this.$(".drawing-thumbnail-overlay").addClass("hidden");
   },
 
   showDrawing: function (event) {
@@ -32,6 +33,12 @@ DrawIt.Views.DrawingThumbnail = Backbone.CompositeView.extend({
     });
     $("body").append(this.modalView.render().$el);
     this.modalView.onRender();
+  },
+
+  toggleFavorite: function () {
+    if (this.model.get('is_favorite')) {
+
+    }
   },
 
   render: function () {

@@ -6,14 +6,13 @@
   position: absolute;
   bottom: 5px;
   padding-top: 10px;
-  display: none;
   z-index: 1;
 }
 
 .favorite{
   width: 30px;
   height: 30px;
-  margin-right: 13px;
+  margin-right: 25px;
   float: right;
   cursor: pointer;
 }

@@ -1,12 +1,23 @@
 .new-comment-text{
-  width: 80%;
+  width: 90%;
   border-radius: 5px;
 }
 
 .new-comment-form{
   border-radius: 5px;
-  margin-left: 20px;
   margin-top: 10px;
+}
+
+.new-comment-form button{
+  float:right;
+  margin-right: 15px;
+}
+
+.new-comment-form button:hover{
+  background: lightblue;
+  overflow:hidden;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
 }
 
 .comment-avatar{

@@ -1,10 +1,11 @@
 <div class="notification-wrapper group
   <%= notification.escape('status') %>">
   <div class='notification-avatar'>
-    <img src="<% notification.escape('avatar_url') %>"/>
+    <img src="<%= notification.escape('avatar_url') %>"/>
   </div>
 
   <div class='notification-content'>
+    <strong><%= notification.escape("username") %></strong>
     <span><%= notification.escape("content") %></span>
   </div>
 </div>

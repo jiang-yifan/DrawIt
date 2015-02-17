@@ -5,8 +5,8 @@ module TopDrawings
     def top_drawings
       Drawing.joins(:hearts)
       .group("drawings.id")
-      .order("count(*)")
-      .limit(50)
+      .order("count(*) Desc")
+      .limit(20)
     end
   end
 end

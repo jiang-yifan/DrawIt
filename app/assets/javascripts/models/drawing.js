@@ -14,6 +14,14 @@ DrawIt.Models.Drawing = Backbone.Model.extend({
       this.avatar().set(payload.avatar)
       delete payload.avatar
     }
+    if (payload.heart) {
+      this.heart().set(payload.heart);
+      delete payload.heart;
+    }
+    if (payload.favorite) {
+      this.favorite().set(payload.favorite);
+      delete payload.favorite;
+    }
 
     return payload
   },
@@ -42,6 +50,24 @@ DrawIt.Models.Drawing = Backbone.Model.extend({
         new DrawIt.Models.Avatar();
     }
     return this._avatar;
+  },
+
+  heart: function () {
+    if(!this._heart){
+      this._heart =
+        new DrawIt.Models.Heart;
+    }
+
+    return this._heart;
+  },
+
+  favorite: function () {
+    if(!this._favorite){
+      this._favorite =
+        new DrawIt.Models.Favorite;
+    }
+
+    return this._favorite;
   }
 }, {
   modelType: "Drawing"

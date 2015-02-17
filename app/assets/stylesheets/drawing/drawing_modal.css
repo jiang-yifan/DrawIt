@@ -17,8 +17,11 @@
   height: 10px;
 }
 
-
 .drawing-show-bottom{
   padding-top: 5px;
   overflow-y: scroll;
+}
+
+.drawing-heart .heart-count{
+  color: black;
 }

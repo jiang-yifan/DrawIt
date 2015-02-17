@@ -6,10 +6,13 @@ DrawIt.Views.NotificationShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.notId = this.model.get('notifiable_id');
+    this.listenTo(this.model, "sync", this.render);
   },
 
   clicked: function (event) {
     event.stopPropagation();
+    this.$(".notification-wrapper").addClass("viewed");
+    this.$(".notification-wrapper").removeClass("unviewed");
     var view = this;
     this.model.set("status", "viewed");
     this.model.save();
@@ -55,7 +58,7 @@ DrawIt.Views.NotificationShow = Backbone.CompositeView.extend({
     this.modalView = new DrawIt.Views.DrawingModalShow({
       model: this.drawing
     });
-    $("#main").append(this.modalView.render().$el);
+    $("#content").append(this.modalView.render().$el);
     this.listenTo(this.modalView, "closeModal", this.unShowDrawing);
     this.modalView.onRender();
   },

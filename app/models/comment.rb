@@ -13,7 +13,7 @@ class Comment < ActiveRecord::Base
         initiator_id: user_id,
         notifiable_id: commentable_id,
         notifiable_type: commentable_type,
-        content: "#{user.username} has commented on your #{commentable_type.downcase}")
+        content: "has commented on your #{commentable_type.downcase}")
     end
   end
 end

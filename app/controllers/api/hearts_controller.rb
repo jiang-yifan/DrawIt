@@ -2,13 +2,19 @@ class Api::HeartsController < ApplicationController
   def create
     @heart = current_user.hearts.new(heart_params)
     if @heart.save
+      render json: @heart
     else
-      render status: 422
+      render json: {}, status: 422
     end
   end
 
-  def delete
-    @heart = Heart.find(params[:id])
+  def destroy
+    @heart = current_user.hearts.find(params[:id])
+    if @heart.destroy
+      render json: {}
+    else
+      render json: {}, status: 422
+    end
   end
 
   private

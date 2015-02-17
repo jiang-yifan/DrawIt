@@ -13,7 +13,10 @@ DrawIt.Views.TagShow = Backbone.View.extend({
   },
 
   render: function () {
-    var content = this.template({tag: this.model});
+    var content = this.template({
+      tag: this.model,
+      tags: this.collection
+    });
     this.$el.html(content);
 
     return this;

@@ -5,7 +5,6 @@ DrawIt.Views.DrawingThumbnail = Backbone.CompositeView.extend({
     "mouseenter": "showOptions",
     "mouseleave": "removeOptions",
     "click .drawing-thumbnail": "showDrawing"
-    // "click .fav-button": "toggleFavorite"
   },
 
   showOptions: function (event) {
@@ -33,12 +32,6 @@ DrawIt.Views.DrawingThumbnail = Backbone.CompositeView.extend({
     });
     $("body").append(this.modalView.render().$el);
     this.modalView.onRender();
-  },
-
-  toggleFavorite: function () {
-    if (this.model.get('is_favorite')) {
-
-    }
   },
 
   render: function () {

@@ -35,13 +35,13 @@ DrawIt.Views.HomePageHeader = Backbone.CompositeView.extend({
   },
 
   refreshBadge: function () {
-    var count = 0;
+    this.count = 0;
     this.notifications.each(function (notification) {
       if (notification.get("status") ==='unviewed') {
-        count++;
+        this.count++;
       }
-    })
-    this.$(".badge").text(count);
+    }.bind(this))
+    this.$(".badge").text(this.count);
   },
 
   refreshNotifications: function () {
@@ -91,6 +91,9 @@ DrawIt.Views.HomePageHeader = Backbone.CompositeView.extend({
   showNotifications: function (event) {
     event.preventDefault();
     event.stopPropagation();
+    if(this.notifications.size() == 0){
+      return;
+    }
     this.searchView.unShow();
     if (!$(".notifications-wrapper").hasClass("hidden")) {
       this.hideNotifications(event);
@@ -108,9 +111,9 @@ DrawIt.Views.HomePageHeader = Backbone.CompositeView.extend({
   },
 
   render: function () {
-
     var content = this.template({profile: this.model});
     this.$el.html(content);
+    this.$(".badge").text(this.count);
     this.attachSubviews();
     return this;
   }

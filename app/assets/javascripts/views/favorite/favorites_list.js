@@ -16,8 +16,7 @@ DrawIt.Views.FavoritesList = Backbone.CompositeView.extend({
     var drawingThumbnailView = new DrawIt.Views.DrawingThumbnail({
       model: drawing
     });
-
-    this.addSubview(".favorites-list", drawingThumbnailView);
+    this.addSubview(".drawings-list", drawingThumbnailView);
   },
 
   render: function () {

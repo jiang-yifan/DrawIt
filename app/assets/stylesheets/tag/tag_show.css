@@ -8,10 +8,11 @@
 
 .tag-wrapper{
   float: left;
-  width: 50px;
   border: 1px solid lightgrey;
   border-radius: 2px;
-  background: #EFF2ED
+  background: #EFF2ED;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
 
 .new-tag{

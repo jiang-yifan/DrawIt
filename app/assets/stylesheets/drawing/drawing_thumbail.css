@@ -13,10 +13,6 @@
   position: relative;
 }
 
-/*.drawing-thumbnail:hover + .drawing-thumbnail-overlay{
-  display: block;
-}*/
-
 .blank-drawing{
   min-width: 200px;
   min-height: 100px;

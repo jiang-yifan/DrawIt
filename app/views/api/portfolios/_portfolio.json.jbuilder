@@ -31,7 +31,8 @@ if show_drawings
 end
 
 if show_hearts
-  json.hearts_count portfolio.hearts.count
-  json.partial! "api/hearts/user_hearted",
-    hearts: portfolio.hearts
+  json.heart do
+    json.partial! "api/hearts/user_hearted",
+      hearts: portfolio.hearts
+    end
 end

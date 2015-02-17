@@ -4,20 +4,21 @@ json.extract!(
 )
 
 if show_hearts
-  json.hearts_count drawing.hearts.count
-  json.partial! "api/hearts/user_hearted",
-    hearts: drawing.hearts
-
-  if current_user.favorite_drawing_ids.include?(drawing.id)
-    json.is_favorite true
-  else
-    json.is_favorite false
+  json.heart do
+    json.partial! "api/hearts/user_hearted",
+      hearts: drawing.hearts
   end
-end
 
-json.user_id drawing.user.id
-json.username drawing.user.username
-json.avatar_url drawing.user.profile.avatar_url
+  json.favorite do
+    json.partial! "api/favorite_drawings/favorite_drawing",
+      favorite_drawings: drawing.user_favorite_drawings
+    end
+end
+json.avatar do
+  json.user_id drawing.user.id
+  json.username drawing.user.username
+  json.avatar_url drawing.user.profile.avatar_url
+end
 
 if show_comments
   json.comments do

@@ -1,6 +1,11 @@
 DrawIt.Views.ActivityShow = Backbone.CompositeView.extend({
   template: JST['activity/activity_show'],
   className: 'activity-wrapper group',
+  events:{
+    "click .activity-avatar-image": "navigateProfile",
+    "click .activity-avatar-name": "navigateProfile"
+  },
+
   initialize: function () {
     this.parseModel();
     this.listenTo(this.activity, "sync", this.synced);
@@ -13,6 +18,13 @@ DrawIt.Views.ActivityShow = Backbone.CompositeView.extend({
       id: id
     })
     this.activity.fetch();
+  },
+
+  navigateProfile: function () {
+    Backbone.history.navigate(
+      "users/" + this.model.get('user_id'),
+      {trigger: true}
+    );
   },
 
   synced: function () {
@@ -57,7 +69,7 @@ DrawIt.Views.ActivityShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content = this.template({activity: this.activity});
+    var content = this.template({avatar: this.model});
     this.$el.html(content);
     return this;
   }

@@ -4,8 +4,9 @@ DrawIt.Views.TagsList = Backbone.CompositeView.extend({
     "click .new-tag": 'showNewTagForm'
   },
 
-  initialize: function () {
+  initialize: function (options, option) {
     this.addTags();
+    this.option = option;
     this.listenTo(this.collection, "add", this.addTag);
     this.listenTo(this.collection, "remove", this.removeTag);
   },
@@ -16,7 +17,8 @@ DrawIt.Views.TagsList = Backbone.CompositeView.extend({
 
   addTag: function (tag) {
     var tagShowView = new DrawIt.Views.TagShow({
-      model: tag
+      model: tag,
+      collection: this.tag
     });
     this.addSubview(".tags-list", tagShowView)
   },
@@ -36,7 +38,7 @@ DrawIt.Views.TagsList = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content = this.template();
+    var content = this.template({hide: this.option});
     this.$el.html(content);
     this.attachSubviews();
 

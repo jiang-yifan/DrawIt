@@ -15,7 +15,6 @@ Rails.application.routes.draw do
       resources :activities, only:[:index]
       resources :drawings, only: [:index]
       resources :portfolios, only: [:index]
-      resources :favorite_drawings, only: [:index]
       resources :user_friends, only: [:index]
       resource :profile, only: [:update, :show]
     end
@@ -24,7 +23,7 @@ Rails.application.routes.draw do
     resources :top_drawings, only:[:index]
     resources :drawings, except: [:index]
     resources :portfolios, except: [:index]
-    resources :favorite_drawings, except: [:index]
+    resources :favorite_drawings
     resources :user_friends, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy, :update]
     resources :tags,  only: [:create, :destroy]

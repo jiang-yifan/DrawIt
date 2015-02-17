@@ -7,7 +7,6 @@ DrawIt.Views.NewCommentForm = Backbone.View.extend({
 
   createComment: function (event) {
     event.preventDefault();
-    debugger
     $delegateTarget = $(event.delegateTarget);
     var data = $delegateTarget.serializeJSON();
     data.comment.commentable_type = (
@@ -15,7 +14,7 @@ DrawIt.Views.NewCommentForm = Backbone.View.extend({
       );
 
     data.comment.commentable_id = this.collection.commentedOn.id;
-
+    $(".new-comment-text").val("");
     var newComment = new DrawIt.Models.Comment();
     var view = this;
     newComment.save(data,{

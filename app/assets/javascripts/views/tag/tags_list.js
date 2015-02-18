@@ -18,7 +18,7 @@ DrawIt.Views.TagsList = Backbone.CompositeView.extend({
   addTag: function (tag) {
     var tagShowView = new DrawIt.Views.TagShow({
       model: tag,
-      collection: this.tag
+      collection: this.collection
     });
     this.addSubview(".tags-list", tagShowView)
   },

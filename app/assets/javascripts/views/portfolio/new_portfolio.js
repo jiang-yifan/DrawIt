@@ -30,10 +30,11 @@ DrawIt.Views.NewPortfolio = Backbone.CompositeView.extend({
 
     var data = $(event.delegateTarget).serializeJSON();
     var newPortfolio = new DrawIt.Models.Portfolio();
+    var view = this;
     newPortfolio.save(data,{
       success: function(){
         Backbone.history.navigate(
-          "#users/" + this.collection.userId + "/portfolios",
+          "#users/" + view.collection.userId + "/portfolios",
          {trigger: true});
       }
     });

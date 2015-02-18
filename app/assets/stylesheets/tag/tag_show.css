@@ -1,16 +1,22 @@
 .tag-remove{
   cursor: pointer;
-  float: left
+  float: right;
+  display: none;
+  color: black;
+  margin-left: 3px;
+  font-size: 60%;
+  line-height: 11px;
 }
-.tag-detail{
+
+.tag-details{
   float: left;
+  padding: 1px 2px;
+  color: #3691AD;
+  cursor: pointer;
 }
 
 .tag-wrapper{
   float: left;
-  border: 1px solid lightgrey;
-  border-radius: 2px;
-  background: #EFF2ED;
   margin-right: 5px;
   margin-bottom: 5px;
 }
@@ -19,9 +25,21 @@
   cursor: pointer;
   float: left;
   margin-left: 50px;
-  background: #F0F0F0;
-  border: 1px solid grey;
-  border-radius: 5px;
-  box-shadow: 1px 1px 1px lightgrey;
-  overflow: hidden;
+  color: #53C2B7;
+}
+
+.new-tag-text{
+  width: 115px;
+}
+
+.submit-tag{
+  float:right;
+}
+
+.tag-details:hover .tag-remove{
+  display: block;
+}
+
+.new-tag:hover{
+  text-shadow: 2px 2px 2px lightgrey;
 }

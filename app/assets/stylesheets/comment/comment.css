@@ -23,7 +23,8 @@
 .comment-avatar{
   width: 30px;
   height: 30px;
-  float: left
+  float: left;
+  cursor: pointer;
 }
 
 .comment-content{
@@ -44,28 +45,17 @@
   margin-top: 5px;
 }
 
+.comment-username{
+  cursor: pointer;
+}
+
 .comment-body{
   padding-left: 3px;
 }
 
 .comments{
-  max-height: 100px;
+  max-height: 300px;
   overflow-y: scroll;
-}
-
-.comment-heart{
-  width: 20px;
-  height: 20px;
-  margin-top: 4px;
-  float: left;
-  cursor: pointer;
-}
-
-.comment-heart-count{
-  font-size: 80%;
-  line-height: 30px;
-  margin-left: 2px;
-  float: left;
 }
 
 .comment-right{
@@ -75,4 +65,8 @@
 
 .comment-hearts{
   float: left;
+}
+
+.comment-hearts .heart-count{
+  color: black;
 }

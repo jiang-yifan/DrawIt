@@ -29,4 +29,10 @@
   bottom: 20px;
   right: 40px;
   border-radius: 10px;
+  color: white;
+  background: #529E97;
+}
+
+.submit-drawing:hover{
+  box-shadow: 2px 2px 3px lightgrey;
 }

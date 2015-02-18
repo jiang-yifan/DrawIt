@@ -23,11 +23,11 @@ DrawIt.Views.Hearts = Backbone.View.extend({
     this.$('img').attr("src", this.emptyHeart);
     this.model.destroy();
     this.model = new DrawIt.Models.Heart();
-    $('.heart-count').text(this.count - 1);
+    this.$('.heart-count').text(this.count - 1);
   },
 
   heart: function () {
-    $('.heart-count').text(this.count + 1);
+    this.$('.heart-count').text(this.count + 1);
     this.$('img').attr("src", this.filledHeart);
     var data = {}
     data.heart = {}

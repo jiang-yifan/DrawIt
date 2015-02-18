@@ -17,7 +17,9 @@ DrawIt.Views.NewDrawingModalContent = Backbone.CompositeView.extend({
   },
 
   createTagsView: function () {
-    this.newTags = new DrawIt.Collections.Tags();
+    this.newTags = new DrawIt.Collections.Tags([],{
+      removable: true
+    });
     var newDrawinTagsListView = new DrawIt.Views.NewDrawingTagsList({
       collection: this.newTags
     });

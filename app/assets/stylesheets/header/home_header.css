@@ -7,6 +7,7 @@
   font-size: 180%;
   font-family: "Pacifico", cursive;
   margin-top: -5px;
+  width: 100px;
   float: left;
   cursor: pointer;
   color: white;
@@ -17,7 +18,6 @@
   width: 200px;
   float: left;
   padding-top: 11px;
-  padding-left: 15px;
 }
 
 .sign-out{
@@ -27,7 +27,7 @@
   border-radius: 5px;
   background: #19D3CF;
   overflow: hidden;
-  margin-left: 5px;
+  margin-left: 20px;
   box-shadow: 1px 1px 1px 1px #0A5452;
 }
 

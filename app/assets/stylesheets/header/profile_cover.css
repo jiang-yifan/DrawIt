@@ -30,3 +30,28 @@
   bottom: 20px;
   right: 30px;
 }
+
+.edit-avatar{
+  position: absolute;
+  color: white;
+  bottom: 95px;
+  left: 35px;
+  display: none;
+}
+
+.edit-cover{
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: right;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+.profile-cover:hover .edit-cover{
+  display: block;
+}

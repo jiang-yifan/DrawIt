@@ -2,6 +2,8 @@ json.extract!(
   portfolio,
   :id, :portfolio_image_url, :description, :name
 )
+is_user = portfolio.user == current_user
+json.is_user is_user
 
 if show_comments
   json.comments do

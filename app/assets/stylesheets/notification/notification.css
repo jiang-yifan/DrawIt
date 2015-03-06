@@ -56,9 +56,13 @@
 }
 
 .badge{
-  font-size: 80%;
+  font-size: 50%;
   border: 1px solid black;
   background: red;
   border-radius: 11px;
   padding: 0 3px;
+  padding-top: 2px;
+  position: absolute;
+  top: -4px;
+  right: -8px;
 }

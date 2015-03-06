@@ -8,7 +8,6 @@
   width: 210px;
   margin-top: 20px;
   margin-left: 20px;
-  overflow-y: scroll;
   padding-left:10px;
   float:left;
 }
@@ -19,7 +18,6 @@
 
 .drawing-show-bottom{
   padding-top: 5px;
-  overflow-y: scroll;
 }
 
 .drawing-heart .heart-count{

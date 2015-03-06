@@ -7,7 +7,7 @@ class Api::DrawingsController < ApplicationController
     @drawing = current_user.drawings.new(drawing_params)
     if @drawing.save
       @drawing.make_tags
-      render json: @drawing
+      render "show"
     else
       render json: @drawing.errors.full_messages, status: 422
     end

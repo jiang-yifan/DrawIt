@@ -1,7 +1,7 @@
 DrawIt.Views.Hearts = Backbone.View.extend({
   template: JST["heart/heart"],
   events: {
-    "click": "toggleHeart"
+    "click img": "toggleHeart"
   },
 
   initialize: function (options) {
@@ -11,7 +11,7 @@ DrawIt.Views.Hearts = Backbone.View.extend({
   },
 
   toggleHeart: function () {
-    this.count = parseInt(this.$('.heart-count').text());
+    this.count = this.count ? this.count : parseInt(this.$('.heart-count').text());
     if (this.model.id) {
       this.unHeart();
     } else {
@@ -23,11 +23,13 @@ DrawIt.Views.Hearts = Backbone.View.extend({
     this.$('img').attr("src", this.emptyHeart);
     this.model.destroy();
     this.model = new DrawIt.Models.Heart();
-    this.$('.heart-count').text(this.count - 1);
+    this.count --;
+    this.$('.heart-count').text(this.count);
   },
 
   heart: function () {
-    this.$('.heart-count').text(this.count + 1);
+    this.count ++;
+    this.$('.heart-count').text(this.count);
     this.$('img').attr("src", this.filledHeart);
     var data = {}
     data.heart = {}
@@ -38,7 +40,6 @@ DrawIt.Views.Hearts = Backbone.View.extend({
 
   render: function () {
     var content = this.template({heart: this.model});
-
     this.$el.html(content);
     if(this.model.id){
       this.$('img').attr("src", this.filledHeart);

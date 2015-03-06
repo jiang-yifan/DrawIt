@@ -1,7 +1,6 @@
 .sign-up-container{
   width: 400px;
-  height: 300px;
-  margin-top: 18px;
+  height: 375px;
   border: 0px solid;
   float: right;
   border-radius: 10px;
@@ -13,33 +12,41 @@
 .sign-up-container input{
   height: 30px;
   width: 230px;
-  margin-top: 5px;
+  margin: 5px auto;
+  display: block;
   font-size: 130%;
 }
 
 .input-container{
-  margin-left: 80px;
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 .sign-up-title{
+  text-align: center;
   display: block;
   font-size: 250%;
-  margin-left: 40px;
   margin-bottom: 10px;
 }
 
-.new-user{
-  margin-top: 20px;
-  margin-left: 120px;
+.new-button{
+  margin: 0 auto;
+  display: block;
   font-size: 180%;
   border: 1px solid lightgrey;
   border-radius: 5px;
-  background: white;
+  background: lightblue;
   box-shadow: 1px 1px 1px lightgrey;
 }
 
-.new-user:hover{
-  background: #EDEDED;
+.new-button:hover{
+  background: #108784;
   box-shadow: 1px 1px 2px 2px grey;
+}
+
+.sign-up-container p{
+  margin: 5px;
+  font-size: 120%;
+  padding-top: 2px;
+  text-align: center;
 }

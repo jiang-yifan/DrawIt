@@ -6,7 +6,7 @@ DrawIt.Views.LogIn = Backbone.View.extend({
 
   logIn: function (event) {
     event.preventDefault();
-    $(event.currentTarget).prop("disabled", true)
+    $(event.currentTarget).prop("disabled", true);
     var data = $(event.delegateTarget).serializeJSON();
     var session = new DrawIt.Models.Session();
     var view = this;
@@ -21,7 +21,7 @@ DrawIt.Views.LogIn = Backbone.View.extend({
   },
 
   retry: function () {
-
+    $('.form-button').prop("disabled", false);
   },
 
   render: function () {

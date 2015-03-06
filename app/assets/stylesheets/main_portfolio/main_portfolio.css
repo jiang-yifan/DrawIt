@@ -1,0 +1,21 @@
+.main-portfolio-attributes{
+  display: block;
+  color: #3691AD;
+  background: #F2F2F2;
+  padding-left: 25px;
+  padding-top: 20px;
+  font-size: 150%;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.edit-main-portfolio{
+  float: right;
+  margin-right: 20px;
+}
+
+.main-portfolio-drawings{
+  max-height: 340px;
+  overflow-y: scroll;
+}

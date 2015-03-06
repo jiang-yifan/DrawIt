@@ -10,7 +10,12 @@
 
 .activity-image-wrapper .drawing-thumbnail-wrapper{
   width: 350px;
-  margin-left: 50px;
+  height:100%;
+  margin-left: 60px;
+}
+
+.activity-wrapper .comments{
+  max-height: 100px;
 }
 
 .activity-image-wrapper .drawing-thumbnail-wrapper .drawing-thumbnail-overlay{

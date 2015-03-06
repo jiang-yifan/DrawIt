@@ -4,7 +4,7 @@
   background: linear-gradient(lightgrey,black);
   opacity: .52;
   position: absolute;
-  bottom: 5px;
+  bottom: 0px;
   padding-top: 10px;
   z-index: 1;
 }

@@ -1,7 +1,8 @@
 <div class="main-portfolio-attributes">
   <span class="main-portfolio-name"><%=mainPortfolio.escape("name")%></span>
-  <span>Hearts: <%= mainPortfolio.escape("hearts_count")%></span>
+  <% if(mainPortfolio.get("is_user")){%>
+    <button class="edit-main-portfolio">Edit</button>
+  <% }%>
 </div>
 
 <div class="main-portfolio-drawings"></div>
-<div class="main-portfolio-comments"></div>

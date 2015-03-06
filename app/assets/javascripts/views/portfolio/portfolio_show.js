@@ -4,8 +4,17 @@ DrawIt.Views.PortfolioShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "sync", this.addHeart);
     this.addDrawings();
     this.addComments();
+  },
+
+  addHeart: function () {
+    var heartView = new DrawIt.Views.Hearts({
+      heartable: this.model,
+      model: this.model.heart()
+    })
+    this.addSubview(".portfolio-heart", heartView);
   },
 
   addComments: function () {

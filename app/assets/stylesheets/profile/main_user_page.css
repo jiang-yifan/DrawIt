@@ -8,15 +8,16 @@
 .profile-left{
   box-sizing: border-box;
   width: 400px;
-  height: 300px;
+  height: 400px;
   border: 1px solid lightgrey;
   background: #FAFAFA;
   float: left;
   border-radius: 5px;
+  overflow: hidden;
 }
 
 .profile-right{
-  width: 450px;
-  margin-left: 50px;
+  width: 475px;
+  margin-left: 25px;
   float: left;
 }

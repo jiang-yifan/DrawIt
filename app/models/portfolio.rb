@@ -3,7 +3,7 @@ class Portfolio < ActiveRecord::Base
   include HasComments
   include HasHearts
   include HasDrawings
-  include UpdatesActivity
+  # include UpdatesActivity
   validates :user, :name, presence: true
   validates :name, uniqueness:{scope: :user,
     message: "already created"}

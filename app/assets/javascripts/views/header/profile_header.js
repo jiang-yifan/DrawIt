@@ -22,11 +22,13 @@ DrawIt.Views.ProfileHeader = Backbone.CompositeView.extend({
   },
 
   addCover: function () {
-    var profileCoverView = new DrawIt.Views.ProfileCover({
-      model: this.model,
-      el: $(".profile-cover")
-    });
-    this.addSubview(".profile-cover", profileCoverView);
+    if(!this.profileCoverView){
+      this.profileCoverView = new DrawIt.Views.ProfileCover({
+        model: this.model,
+        el: this.$(".profile-cover")
+      });
+      this.addSubview(".profile-cover", this.profileCoverView);
+    }
   },
 
   navigateDrawings: function () {

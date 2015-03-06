@@ -15,7 +15,6 @@ DrawIt.Routers.Router = Backbone.Router.extend({
     this.$header = options.$header;
     this.$rootEl = options.$rootEl;
     this.$cover = options.$cover;
-
     this.initiateUser();
     this.createHeader();
   },

@@ -15,7 +15,7 @@
 .heart-count{
   float: left;
   cursor: pointer;
-  color: white;
+  color: black;
   line-height: 26px;
   padding-left: 3px;
   margin-top: 3px;

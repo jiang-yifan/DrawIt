@@ -1,7 +1,7 @@
 .drawing-thumbnail-overlay{
   width: 210px;
   height: 40px;
-  background: linear-gradient(lightgrey,black);
+  background: linear-gradient(white,lightgrey);
   opacity: .52;
   position: absolute;
   bottom: 0px;

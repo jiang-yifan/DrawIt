@@ -9,7 +9,7 @@ DrawIt.Views.SignUp = Backbone.View.extend({
     event.preventDefault();
     data = {};
     data.user = {
-      username: "Leonardo",
+      username: "BobRoss",
       password: "password"
     };
     $(event.currentTarget).prop('disabled', true);

@@ -744,3 +744,4 @@
 [03/05/15 18:09:38 -0800 Yifans-MacBook-Pro.local (25952)] INFO : Doing deferred dependency-detection before Rack startup
 [03/05/15 18:09:41 -0800 Yifans-MacBook-Pro.local (25952)] ERROR : Invalid license key, please contact support@newrelic.com
 [03/05/15 18:09:41 -0800 Yifans-MacBook-Pro.local (25952)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[03/06/15 12:17:50 -0800 Yifans-MacBook-Pro.local (25952)] INFO : Starting Agent shutdown

@@ -21,10 +21,6 @@ Extra
 -Allow Competitions with user agreed upon judges
 -Have mini games
 
-[View WireFrame][views]
-
-[views]: ./pictures/view.md
-
 users:
 
 | column_name   | Data          | Detail  |  

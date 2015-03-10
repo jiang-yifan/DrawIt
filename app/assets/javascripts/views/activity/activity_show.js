@@ -71,6 +71,7 @@ DrawIt.Views.ActivityShow = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template({avatar: this.model});
     this.$el.html(content);
+    this.attachSubviews();
     return this;
   }
 });

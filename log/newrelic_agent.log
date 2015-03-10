@@ -745,3 +745,25 @@
 [03/05/15 18:09:41 -0800 Yifans-MacBook-Pro.local (25952)] ERROR : Invalid license key, please contact support@newrelic.com
 [03/05/15 18:09:41 -0800 Yifans-MacBook-Pro.local (25952)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
 [03/06/15 12:17:50 -0800 Yifans-MacBook-Pro.local (25952)] INFO : Starting Agent shutdown
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] INFO : Starting the New Relic agent in "development" environment.
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] WARN : No configuration file found. Working directory = /Users/yifanjiang/Desktop/DrawIt
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] WARN : Looked in these locations (based on defaults): /Users/yifanjiang/Desktop/DrawIt/config/newrelic.yml, /Users/yifanjiang/Desktop/DrawIt/newrelic.yml, /Users/yifanjiang/Desktop/DrawIt/config/newrelic.yml, /Users/yifanjiang/Desktop/DrawIt/newrelic.yml, /Users/yifanjiang/.newrelic/newrelic.yml, /Users/yifanjiang/newrelic.yml
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] INFO : Environment: development
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] INFO : Dispatcher: webrick
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] INFO : Application: development
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] INFO : Installing ActiveJob instrumentation
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] INFO : Installing ActiveRecord 4 instrumentation
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] INFO : Installing Net instrumentation
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] INFO : Installing deferred Rack instrumentation
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] INFO : Installing Rack::Builder middleware instrumentation
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] INFO : Installing Rails 3+ middleware instrumentation
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] INFO : Installing Rails 4 Controller instrumentation
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] INFO : Installing Rails 4 view instrumentation
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] INFO : Installing Rails 4 Error instrumentation
+[03/10/15 10:27:24 -0700 Yifans-MacBook-Pro.local (31956)] INFO : Finished instrumentation
+[03/10/15 10:27:25 -0700 Yifans-MacBook-Pro.local (31956)] INFO : Doing deferred dependency-detection before Rack startup
+[03/10/15 10:27:28 -0700 Yifans-MacBook-Pro.local (31956)] ERROR : Invalid license key, please contact support@newrelic.com
+[03/10/15 10:27:28 -0700 Yifans-MacBook-Pro.local (31956)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[03/10/15 10:33:16 -0700 Yifans-MacBook-Pro.local (31956)] INFO : Starting Agent shutdown

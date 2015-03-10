@@ -1,5 +1,4 @@
-Somewhat Facebook clone:  
-Minimun Viable Product  
+  Minimun Viable Product  
 -Create account/ Log in, 4 hours  
 -Upload Drawings, 2hours  
 -View Drawings, 3hours  
@@ -20,7 +19,7 @@ Extra
 -Use OpenCV to allow users to learn to draw  
 (uses picture matching to give feedback on his drawing)  
 -Allow Competitions with user agreed upon judges
--Have mini games (maybe the asteroids)
+-Have mini games
 
 [View WireFrame][views]
 
@@ -59,7 +58,8 @@ comments:
 | commentable_id      | integer | not null, foreign key |  
 | commentable_type      | string      |  not null |  
 | content     | text      |   not null |  
-| id     | integer      |   not null, prim |  
+| id     | integer      |   not null, prim |
+| user_id     | integer      |   not null, prim |  
 
 
 profiles:
@@ -71,6 +71,24 @@ profiles:
 | cover_url      | string      |  not null |  
 | id     | integer      |   not null, prim |  
 
+portfolio:
+
+| column_name   | Data          | Detail  |  
+| ------------- |:-------------:| -----:|  
+| user_id      | integer | not null, foreign key |  
+| avatar_url      | string      |  not null |  
+| cover_url      | string      |  not null |  
+| id     | integer      |   not null, prim |  
+
+activities:
+
+| column_name   | Data          | Detail  |  
+| ------------- |:-------------:| -----:|  
+| user_id      | integer | not null, foreign key |  
+| activity_id      | integer      |  not null, foreign key |  
+| activity_type      | string      |  not null, foreign key |  
+| id     | integer      |   not null, prim |  
+
 hearts:
 
 | column_name   | Data          | Detail  |  
@@ -80,10 +98,46 @@ hearts:
 | user_id      | string      |  not null, foreign key |  
 | id     | integer      |   not null, prim |  
 
-Follows:
+followings:
 
 | column_name   | Data          | Detail  |  
 | ------------- |:-------------:| -----:|  
 | followee_id      | integer | not null, foreign key |  
 | follower_id     | integer      |  not null, foreign key |  
+| id     | integer      |   not null, prim |  
+
+friend_requests:
+
+| column_name   | Data          | Detail  |  
+| ------------- |:-------------:| -----:|  
+| recipient_id      | integer | not null, foreign key |  
+| sender_id     | integer      |  not null, foreign key |  
+| id     | integer      |   not null, prim |  
+
+notifications:
+
+| column_name   | Data          | Detail  |  
+| ------------- |:-------------:| -----:|  
+| user_id      | integer | not null, foreign key |  
+| initiator_id     | integer      |  not null, foreign key |  
+| notification_id     | integer      |  not null, foreign key |  
+| notification_type     | integer      |  not null, foreign key |  
+| status     | string      |  not null |  
+| content     | string      |  not null|  
+| id     | integer      |   not null, prim |
+
+tags:
+
+| column_name   | Data          | Detail  |  
+| ------------- |:-------------:| -----:|  
+| tag_name      | string | not null |  
+| id     | integer      |   not null, prim |  
+
+taggings:
+
+| column_name   | Data          | Detail  |  
+| ------------- |:-------------:| -----:|  
+| tag_id      | integer | not null, foreign key |  
+| taggable_id     | integer      |  not null, foreign key |  
+| taggable_type     | string      |  not null, foreign key |  
 | id     | integer      |   not null, prim |  
